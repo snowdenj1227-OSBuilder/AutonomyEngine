@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomy Engine — From a sentence to a system.</title>
+  <meta name="description" content="Autonomy Engine compiles intent into working, audited systems — code, tests, CAD, and proofs.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Autonomy Engine — From a sentence to a system.">
+  <meta property="og:description" content="Compile human intent into audited systems — code, tests, CAD, and proofs.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:url" content="https://autonomyengine.net">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="announce" id="announce" role="status" aria-live="polite">
+    ⚙️ Early-access: links are being wired up as we onboard Operators. Join the waitlist to get access.
+    <button class="announce-close" aria-label="Dismiss notice" onclick="document.getElementById('announce').remove()">✕</button>
+  </div>
+
+  <header class="navbar" role="banner">
+    <a class="brand" href="#top" aria-label="Autonomy Engine home">
+      <!-- Replace assets/logo.svg with your real SVG. Keep the filename. -->
+      <img src="/assets/logo.svg" alt="" class="logo" width="34" height="34" fetchpriority="high">
+      <span class="brand-text">Autonomy <em>Engine</em></span>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#demo">Demo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <h1>From a sentence to a <span class="underline">system</span>.</h1>
+      <p class="lede">
+        Autonomy Engine compiles intent into working, audited systems —
+        <strong>code</strong>, <strong>tests</strong>, <strong>CAD</strong>, and <strong>proofs</strong>.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#waitlist">Become an Operator</a>
+        <a class="btn ghost" href="#demo">Watch 60-second demo</a>
+      </div>
+
+      <!-- Glider slider -->
+      <div class="glider" aria-label="Showcase">
+        <button class="glider-btn prev" aria-label="Previous slide">‹</button>
+        <div class="glider-track" id="glider-track" tabindex="0" aria-roledescription="carousel" aria-label="Autonomy Engine showcase"></div>
+        <button class="glider-btn next" aria-label="Next slide">›</button>
+      </div>
+      <p class="muted center tiny">Tip: swipe/drag on mobile • auto-plays</p>
+    </section>
+
+    <section id="features" class="panel">
+      <div class="section-head">
+        <h2>Prompt → Business</h2>
+        <p class="muted">Scaffold. Verify. Ship. Self-audit.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Sandbox &amp; Proofs</h3>
+          <p>Zero-trust execution with signed receipts (IAEL-lite), cost-aware runs, and security scans.</p>
+        </article>
+        <article class="card">
+          <h3>Parametric CAD</h3>
+          <p>Editable CAD via CADQuery/OpenSCAD. Export STEP/STL/GLTF with manifold checks.</p>
+        </article>
+        <article class="card">
+          <h3>Governance</h3>
+          <p>Probabilistic oversight and audit receipts for verifiable runs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pipeline" class="panel">
+      <div class="section-head">
+        <h2>The AE pipeline</h2>
+        <p class="muted">Designed for transparency and control.</p>
+      </div>
+      <ol class="pipeline" role="list">
+        <li><span>Prompt</span></li>
+        <li><span>AESL Plan</span></li>
+        <li><span>Orchestrator</span></li>
+        <li><span>Runners (code • tests • cad)</span></li>
+        <li><span>Artifacts</span></li>
+        <li><span>Audit Receipt</span></li>
+      </ol>
+    </section>
+
+    <section id="demo" class="panel demo">
+      <div class="section-head">
+        <h2>Demo</h2>
+        <p class="muted">A 60‑second walkthrough is coming online shortly.</p>
+      </div>
+      <div class="video-wrap placeholder">
+        <div class="video-poster">
+          <div class="poster-mark">Autonomy Engine</div>
+          <div class="poster-sub">Demo video coming soon</div>
+        </div>
+      </div>
+      <p class="muted center">Prefer text? <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" target="_blank" rel="noopener">Read the framework</a>.</p>
+    </section>
+
+    <section id="waitlist" class="panel waitlist">
+      <div class="section-head">
+        <h2>Early access</h2>
+        <p class="muted">Join the Operator waitlist — we’ll reach out when your use‑case opens.</p>
+      </div>
+      <div class="typeform-embed">
+        <iframe title="Operator Waitlist" src="https://form.typeform.com/to/t3arwtL2" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section id="contact" class="panel contact">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p class="muted">Questions, partnerships, or early access? Reach out.</p>
+      </div>
+      <div class="contact-cards">
+        <a class="card" href="mailto:operator@autonomyengine.net">
+          <strong>operator@autonomyengine.net</strong>
+          <span>Primary contact</span>
+        </a>
+        <a class="card" href="mailto:support@autonomyengine.net">
+          <strong>support@autonomyengine.net</strong>
+          <span>Help &amp; support</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="socials" aria-label="Social links">
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">
+        <img src="/assets/icon-linkedin.svg" alt="" />
+      </a>
+      <a aria-label="GitHub" href="https://github.com/snowdenj1227-OSBuilder" target="_blank" rel="noopener">
+        <img src="/assets/icon-github.svg" alt="" />
+      </a>
+      <a aria-label="X (Twitter)" href="https://x.com/autonomy_engine" target="_blank" rel="noopener">
+        <img src="/assets/icon-x.svg" alt="" />
+      </a>
+      <a aria-label="Email" href="mailto:hello@autonomyengine.net">
+        <img src="/assets/icon-mail.svg" alt="" />
+      </a>
+    </div>
+    <p>© 2025 Autonomy Engine Systems LLC</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
