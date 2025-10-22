@@ -1,167 +1,145 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Autonomy Engine — From a sentence to a system.</title>
-  <meta name="description" content="Autonomy Engine compiles intent into working, audited systems — code, tests, CAD, and proofs.">
-<!-- Favicon setup -->
-<link rel="icon" href="/assets/favicon.svg?v=3" type="image/svg+xml">
-<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/assets/favicon-192.png" sizes="192x192" type="image/png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
-<link rel="mask-icon" href="/assets/favicon.svg" color="#0ABEEA">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Autonomy Engine — From a sentence to a system.">
-  <meta property="og:description" content="Compile human intent into audited systems — code, tests, CAD, and proofs.">
-  <meta property="og:image" content="/assets/og-image.png">
-  <meta property="og:url" content="https://autonomyengine.net">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Autonomy Engine compiles intent into audited systems — code, tests, CAD, and proofs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="announce" id="announce" role="status" aria-live="polite">
-    ⚙️ Early-access: links are being wired up as we onboard Operators. Join the waitlist to get access.
-    <button class="announce-close" aria-label="Dismiss notice" onclick="document.getElementById('announce').remove()">✕</button>
-  </div>
 
-  <header class="navbar" role="banner">
-    <a class="brand" href="#top" aria-label="Autonomy Engine home">
-      <!-- Replace assets/logo.svg with your real SVG. Keep the filename. -->
-      <img src="/assets/logo.svg" alt="" class="logo" width="34" height="34" fetchpriority="high">
-      <span class="brand-text">Autonomy <em>Engine</em></span>
+  <!-- ========== NAV ========== -->
+  <header class="nav">
+    <a href="/" class="brand">
+      <!-- drop your SVG at /assets/ae-logo.svg and it will show -->
+      <img src="/assets/ae-logo.svg" alt="Autonomy Engine" width="32" height="32" onerror="this.style.display='none'"/>
+      <span>Autonomy&nbsp;Engine</span>
     </a>
-    <nav class="navlinks" aria-label="Primary">
+    <nav class="nav__links">
       <a href="#features">Features</a>
       <a href="#pipeline">Pipeline</a>
       <a href="#demo">Demo</a>
-      <a href="#contact">Contact</a>
+      <a href="#typeform" class="btn btn--small btn--primary">Become an Operator</a>
     </nav>
   </header>
 
-  <main id="main">
-    <section id="top" class="hero">
-      <h1>From a sentence to a <span class="underline">system</span>.</h1>
-      <p class="lede">
-        Autonomy Engine compiles intent into working, audited systems —
-        <strong>code</strong>, <strong>tests</strong>, <strong>CAD</strong>, and <strong>proofs</strong>.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="#waitlist">Become an Operator</a>
-        <a class="btn ghost" href="#demo">Watch 60-second demo</a>
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <h1>From a sentence to a system.</h1>
+      <p>Autonomy Engine compiles intent into audited systems — <strong>code</strong>, <strong>tests</strong>, <strong>CAD</strong>, and <strong>proofs</strong>.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#typeform">Become an Operator</a>
+        <a class="btn btn--ghost" href="#demo">Watch 60-second demo</a>
       </div>
-
-      <!-- Glider slider -->
-      <div class="glider" aria-label="Showcase">
-        <button class="glider-btn prev" aria-label="Previous slide">‹</button>
-        <div class="glider-track" id="glider-track" tabindex="0" aria-roledescription="carousel" aria-label="Autonomy Engine showcase"></div>
-        <button class="glider-btn next" aria-label="Next slide">›</button>
-      </div>
-      <p class="muted center tiny">Tip: swipe/drag on mobile • auto-plays</p>
-    </section>
-
-    <section id="features" class="panel">
-      <div class="section-head">
-        <h2>Prompt → Business</h2>
-        <p class="muted">Scaffold. Verify. Ship. Self-audit.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Sandbox &amp; Proofs</h3>
-          <p>Zero-trust execution with signed receipts (IAEL-lite), cost-aware runs, and security scans.</p>
-        </article>
-        <article class="card">
-          <h3>Parametric CAD</h3>
-          <p>Editable CAD via CADQuery/OpenSCAD. Export STEP/STL/GLTF with manifold checks.</p>
-        </article>
-        <article class="card">
-          <h3>Governance</h3>
-          <p>Probabilistic oversight and audit receipts for verifiable runs.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="pipeline" class="panel">
-      <div class="section-head">
-        <h2>The AE pipeline</h2>
-        <p class="muted">Designed for transparency and control.</p>
-      </div>
-      <ol class="pipeline" role="list">
-        <li><span>Prompt</span></li>
-        <li><span>AESL Plan</span></li>
-        <li><span>Orchestrator</span></li>
-        <li><span>Runners (code • tests • cad)</span></li>
-        <li><span>Artifacts</span></li>
-        <li><span>Audit Receipt</span></li>
-      </ol>
-    </section>
-
-    <section id="demo" class="panel demo">
-      <div class="section-head">
-        <h2>Demo</h2>
-        <p class="muted">A 60‑second walkthrough is coming online shortly.</p>
-      </div>
-      <div class="video-wrap placeholder">
-        <div class="video-poster">
-          <div class="poster-mark">Autonomy Engine</div>
-          <div class="poster-sub">Demo video coming soon</div>
-        </div>
-      </div>
-      <p class="muted center">Prefer text? <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" target="_blank" rel="noopener">Read the framework</a>.</p>
-    </section>
-
-    <section id="waitlist" class="panel waitlist">
-      <div class="section-head">
-        <h2>Early access</h2>
-        <p class="muted">Join the Operator waitlist — we’ll reach out when your use‑case opens.</p>
-      </div>
-      <div class="typeform-embed">
-        <iframe title="Operator Waitlist" src="https://form.typeform.com/to/t3arwtL2" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" loading="lazy"></iframe>
-      </div>
-    </section>
-
-    <section id="contact" class="panel contact">
-      <div class="section-head">
-        <h2>Get in touch</h2>
-        <p class="muted">Questions, partnerships, or early access? Reach out.</p>
-      </div>
-      <div class="contact-cards">
-        <a class="card" href="mailto:operator@autonomyengine.net">
-          <strong>operator@autonomyengine.net</strong>
-          <span>Primary contact</span>
-        </a>
-        <a class="card" href="mailto:support@autonomyengine.net">
-          <strong>support@autonomyengine.net</strong>
-          <span>Help &amp; support</span>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="socials" aria-label="Social links">
-      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">
-        <img src="/assets/icon-linkedin.svg" alt="" />
-      </a>
-      <a aria-label="GitHub" href="https://github.com/snowdenj1227-OSBuilder" target="_blank" rel="noopener">
-        <img src="/assets/icon-github.svg" alt="" />
-      </a>
-      <a aria-label="X (Twitter)" href="https://x.com/autonomy_engine" target="_blank" rel="noopener">
-        <img src="/assets/icon-x.svg" alt="" />
-      </a>
-      <a aria-label="Email" href="mailto:hello@autonomyengine.net">
-        <img src="/assets/icon-mail.svg" alt="" />
-      </a>
     </div>
-    <p>© 2025 Autonomy Engine Systems LLC</p>
+  </section>
+
+  <!-- ========== FEATURES (optional) ========== -->
+  <section id="features" class="section" data-reveal>
+    <div class="wrap">
+      <h2>Prompt → Business</h2>
+      <p class="lead">Compile human intent to AESL plans, scaffold projects, wire CI, and ship artifacts.</p>
+      <ul class="grid3">
+        <li class="card">
+          <h3>Scaffold code + tests + CI</h3>
+          <p>Project bootstraps with coverage gates and reproducible builds.</p>
+        </li>
+        <li class="card">
+          <h3>Coverage gates & SBOM</h3>
+          <p>Quality bars enforced by policy; supply-chain visibility by default.</p>
+        </li>
+        <li class="card">
+          <h3>Provider-agnostic routing</h3>
+          <p>Multi-model orchestration across GPT, Gemini, and more.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PIPELINE (glow on hover) ========== -->
+  <section id="pipeline" class="section" data-reveal>
+    <div class="wrap">
+      <h2>AE Pipeline</h2>
+      <div class="pipeline">
+        <button class="step"><span class="halo"></span><div class="label">Intent → Plan</div><div class="sub">AESL plan</div></button>
+        <button class="step"><span class="halo"></span><div class="label">Scaffold</div><div class="sub">code + tests + CI</div></button>
+        <button class="step"><span class="halo"></span><div class="label">Wire CI</div><div class="sub">coverage gates</div></button>
+        <button class="step"><span class="halo"></span><div class="label">Ship</div><div class="sub">artifacts + SBOM</div></button>
+        <button class="step"><span class="halo"></span><div class="label">Govern</div><div class="sub">proofs + audit</div></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDER (big, draggable) ========== -->
+  <section class="section" data-reveal>
+    <div class="wrap">
+      <h2>How it comes together</h2>
+    </div>
+    <div class="rail">
+      <div class="rail__track" id="railTrack">
+        <!-- 6 tiles (repeat twice for seamless loop) -->
+        <article class="tile"><div class="tile__icon">🧠</div><h4>Prompt → Plan</h4><p>Turn natural language into AESL with constraints.</p></article>
+        <article class="tile"><div class="tile__icon">🏗️</div><h4>Scaffold</h4><p>Generate projects, tests, CI, infra templates.</p></article>
+        <article class="tile"><div class="tile__icon">🧪</div><h4>Test & CI</h4><p>Coverage gates, quality bars, reproducible builds.</p></article>
+        <article class="tile"><div class="tile__icon">🚀</div><h4>Ship</h4><p>Artifacts + SBOM; provider-agnostic routing.</p></article>
+        <article class="tile"><div class="tile__icon">🛰️</div><h4>Observe</h4><p>Traces, telemetry, signed provenance.</p></article>
+        <article class="tile"><div class="tile__icon">🛡️</div><h4>Govern</h4><p>Ethical constraints, proofs, and audit trail.</p></article>
+
+        <!-- duplicate 6 for infinite loop -->
+        <article class="tile"><div class="tile__icon">🧠</div><h4>Prompt → Plan</h4><p>Turn natural language into AESL with constraints.</p></article>
+        <article class="tile"><div class="tile__icon">🏗️</div><h4>Scaffold</h4><p>Generate projects, tests, CI, infra templates.</p></article>
+        <article class="tile"><div class="tile__icon">🧪</div><h4>Test & CI</h4><p>Coverage gates, quality bars, reproducible builds.</p></article>
+        <article class="tile"><div class="tile__icon">🚀</div><h4>Ship</h4><p>Artifacts + SBOM; provider-agnostic routing.</p></article>
+        <article class="tile"><div class="tile__icon">🛰️</div><h4>Observe</h4><p>Traces, telemetry, signed provenance.</p></article>
+        <article class="tile"><div class="tile__icon">🛡️</div><h4>Govern</h4><p>Ethical constraints, proofs, and audit trail.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEMO ========== -->
+  <section id="demo" class="section" data-reveal>
+    <div class="wrap">
+      <h2>60-second Demo</h2>
+      <!-- Swap with YouTube/Vimeo later; a placeholder for now -->
+      <div class="card" style="aspect-ratio:16/9;display:grid;place-items:center;">
+        <p style="color:#97a3ab">Demo coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TYPEFORM (embedded) ========== -->
+  <section id="typeform" class="section" data-reveal>
+    <div class="wrap">
+      <h2>Become an Operator</h2>
+    </div>
+    <div class="card embed">
+      <iframe
+        src="https://form.typeform.com/to/t3arwtL2"
+        style="width:100%;height:720px;border:0;"
+        allow="camera; microphone; autoplay; encrypted-media; fullscreen; clipboard-read; clipboard-write">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER (socials + links) ========== -->
+  <footer class="site-footer">
+    <nav class="socials">
+      <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b" aria-label="LinkedIn">in</a>
+      <a href="https://x.com/autonomy_engine" aria-label="X">𝕏</a>
+      <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub">GH</a>
+      <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" aria-label="Readme">📄</a>
+    </nav>
+    <p class="tiny">
+      © <span id="y"></span> Autonomy Engine Systems LLC • <a href="https://autonomy-engine-landing-page.pages.dev" target="_blank" rel="noopener">classic landing</a>
+    </p>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>
