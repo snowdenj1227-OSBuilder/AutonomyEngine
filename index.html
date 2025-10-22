@@ -167,10 +167,30 @@
   </section>
 
   <!-- ========== SLIDER (big, draggable) ========== -->
-  <section class="section" data-reveal>
-    <div class="wrap">
-      <h2>How it comes together</h2>
-    </div>
+<section class="section how" data-reveal>
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <h2>How it comes together</h2>
+        <p class="muted">Intent → AESL → scaffold → tests → CI → deploy → audit.</p>
+      </div>
+    </header>
+  </div>
+
+  <div class="marquee">
+    <ul class="belt" id="belt">
+      <li class="chip">Intent</li>
+      <li class="chip">AESL</li>
+      <li class="chip">Scaffold</li>
+      <li class="chip">Tests</li>
+      <li class="chip">CI</li>
+      <li class="chip">SBOM</li>
+      <li class="chip">Deploy</li>
+      <li class="chip">Audit</li>
+    </ul>
+  </div>
+</section>
+
     <div class="rail">
       <div class="rail__track" id="railTrack">
         <!-- 6 tiles (repeat twice for seamless loop) -->
@@ -180,8 +200,7 @@
         <article class="tile"><div class="tile__icon">🚀</div><h4>Ship</h4><p>Artifacts + SBOM; provider-agnostic routing.</p></article>
         <article class="tile"><div class="tile__icon">🛰️</div><h4>Observe</h4><p>Traces, telemetry, signed provenance.</p></article>
         <article class="tile"><div class="tile__icon">🛡️</div><h4>Govern</h4><p>Ethical constraints, proofs, and audit trail.</p></article>
-
-        <!-- duplicate 6 for infinite loop -->
+       <!-- duplicate 6 for infinite loop -->
         <article class="tile"><div class="tile__icon">🧠</div><h4>Prompt → Plan</h4><p>Turn natural language into AESL with constraints.</p></article>
         <article class="tile"><div class="tile__icon">🏗️</div><h4>Scaffold</h4><p>Generate projects, tests, CI, infra templates.</p></article>
         <article class="tile"><div class="tile__icon">🧪</div><h4>Test & CI</h4><p>Coverage gates, quality bars, reproducible builds.</p></article>
