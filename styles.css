@@ -115,6 +115,50 @@ a:hover{text-decoration:underline}
 }
 @keyframes hue{ to{ --rot:360deg } }
 
+/* Pipeline (infinite marquee) */
+.pipeline { padding: 64px 0; }
+.pipeline .section-title { font-size: 28px; margin-bottom: 8px; }
+.pipeline .section-kicker { opacity: .75; margin-bottom: 24px; }
+
+.marquee { position: relative; overflow: hidden; }
+.track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+.p-card {
+  flex: 0 0 320px;                    /* BIG cards */
+  min-height: 160px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-areas:
+    "icon title"
+    "icon blurb";
+  column-gap: 16px;
+}
+.p-card .p-icon   { grid-area: icon;  font-size: 40px; filter: drop-shadow(0 8px 16px rgba(0,0,0,.3)); align-self: start; }
+.p-card .p-title  { grid-area: title; font-weight: 700; margin-bottom: 6px; }
+.p-card .p-blurb  { grid-area: blurb; font-size: .92rem; opacity: .9; line-height: 1.35; }
+
+.p-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(72, 200, 190, .45);        /* teal edge */
+  box-shadow:
+    0 6px 24px -6px rgba(0,0,0,.45),
+    0 0 28px rgba(72, 200, 190, .18),           /* teal glow */
+    0 0 18px rgba(241, 109, 96, .12);           /* coral glow */
+}
+
+/* Optional: hide scrollbars if any container ever scrolls */
+.pipeline *::-webkit-scrollbar { display: none; }
+.pipeline * { scrollbar-width: none; }
+
 
 /* Glow/breathe on pipeline buttons when hover */
 .btn, .tile, .feature-card{
