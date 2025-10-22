@@ -139,29 +139,96 @@
   </section>
 
   <!-- HOW -->
-  <section id="how" class="section how" data-reveal>
-    <div class="wrap">
-      <header class="section-head section-head--solo">
-        <div>
-          <h2>How it comes together</h2>
-          <p class="muted">Intent → AESL → scaffold → tests → CI → deploy → audit.</p>
-        </div>
-      </header>
-    </div>
+ <section id="pipeline" class="pipeline">
+  <div class="container">
+    <h2 class="section-title">How it comes together</h2>
+    <p class="section-kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate</p>
 
-    <div class="marquee">
-      <ul class="belt" id="belt">
-        <li class="chip">Intent</li>
-        <li class="chip">AESL</li>
-        <li class="chip">Scaffold</li>
-        <li class="chip">Tests</li>
-        <li class="chip">CI</li>
-        <li class="chip">SBOM</li>
-        <li class="chip">Deploy</li>
-        <li class="chip">Audit</li>
-      </ul>
+    <div class="marquee" id="pipelineMarquee">
+      <div class="track" id="pipelineTrack">
+        <!-- One full loop of cards (we’ll auto-clone these for infinite scroll) -->
+        <a class="p-card" href="#" aria-label="Intent">
+          <span class="p-icon">🧠</span>
+          <span class="p-title">Intent</span>
+          <span class="p-blurb">Natural language requirements captured as specs.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="AESL">
+          <span class="p-icon">🗂️</span>
+          <span class="p-title">AESL</span>
+          <span class="p-blurb">Autonomy Engine Scripting Language plan & control.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Scaffold">
+          <span class="p-icon">🏗️</span>
+          <span class="p-title">Scaffold</span>
+          <span class="p-blurb">Projects, tests, CI, infra templates auto-generated.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Tests">
+          <span class="p-icon">🧪</span>
+          <span class="p-title">Tests</span>
+          <span class="p-blurb">Coverage gates & quality bars enforced up-front.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="CI">
+          <span class="p-icon">⚙️</span>
+          <span class="p-title">CI</span>
+          <span class="p-blurb">Pipelines wired, reproducible builds guaranteed.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="SBOM">
+          <span class="p-icon">📦</span>
+          <span class="p-title">SBOM</span>
+          <span class="p-blurb">Signed provenance & software bill of materials.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Deploy">
+          <span class="p-icon">🚀</span>
+          <span class="p-title">Deploy</span>
+          <span class="p-blurb">Provider-agnostic routing (multi-model & cloud).</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Audit">
+          <span class="p-icon">🔎</span>
+          <span class="p-title">Audit</span>
+          <span class="p-blurb">Receipts, evidence, and tamper-evident trails.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Observe">
+          <span class="p-icon">📈</span>
+          <span class="p-title">Observe</span>
+          <span class="p-blurb">Traces, telemetry, drift detection, safe rollback.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Optimize">
+          <span class="p-icon">🧭</span>
+          <span class="p-title">Optimize</span>
+          <span class="p-blurb">Feedback to intent; continual improvement loop.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Marketplace">
+          <span class="p-icon">🛒</span>
+          <span class="p-title">Marketplace</span>
+          <span class="p-blurb">Ecosystem of blueprints, agents, and adapters.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="AE Labs">
+          <span class="p-icon">🔬</span>
+          <span class="p-title">AE Labs</span>
+          <span class="p-blurb">New substrates: security, proofs, robotics, more.</span>
+        </a>
+
+        <a class="p-card" href="#" aria-label="Verticals">
+          <span class="p-icon">🧰</span>
+          <span class="p-title">Vertical OS</span>
+          <span class="p-blurb">Freelancer, Real Estate, Student, Healthcare…</span>
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- DEMO -->
   <section id="demo" class="section" data-reveal>
