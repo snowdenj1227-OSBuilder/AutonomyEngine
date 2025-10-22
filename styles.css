@@ -119,3 +119,8 @@ a:hover{text-decoration:underline}
   50%{ box-shadow: 0 0 0 .12rem rgba(99,247,232,.10) }
 }
 .pipeline .tile:hover{ animation: none } /* let hover win */
+/* widen feature cards on desktop */
+@media (min-width: 1200px){
+  .rail-track{ grid-auto-columns: 26rem; gap:1.25rem; }
+  .feature-card{ padding:1.25rem 1.35rem }
+}
