@@ -42,66 +42,112 @@
   </section>
 
 <!-- FEATURES -->
-<section id="features" class="section features">
-  <header class="section-head">
-    <h2>What the Engine ships with</h2>
-    <p class="muted">Scroll to explore the stack & prebuilt verticals.</p>
-  </header>
+<section id="features" class="section features" data-reveal>
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <h2>What the Engine ships with</h2>
+        <p class="muted">A focused set of systems that turn intent into audited outputs — and real businesses.</p>
+      </div>
+      <div class="feature-arrows">
+        <button class="feat-btn prev" aria-label="Previous">‹</button>
+        <button class="feat-btn next" aria-label="Next">›</button>
+      </div>
+    </header>
+  </div>
 
   <div class="feature-rail">
-    <button class="rail-btn prev" aria-label="Scroll left">‹</button>
-
-    <ul class="rail-track" id="featureTrack" tabindex="0" aria-label="Autonomy Engine features">
-      <!-- 1 -->
+    <ul class="feature-track" id="featureTrack" tabindex="0" aria-label="Autonomy Engine features">
+      <!-- Card 1 -->
       <li class="feature-card">
+        <div class="ico">
+          <!-- Simple inline icon -->
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="18" r="10"/><circle cx="28" cy="30" r="10"/></svg>
+        </div>
         <h3>Prompt → Business</h3>
-        <p>Compile intent to AESL plans, scaffold code+tests, wire CI, ship artifacts.</p>
+        <p>Compile natural language into AESL plans, scaffold code + tests, wire CI, and ship artifacts with receipts.</p>
         <ul class="bullets">
-          <li>Coverage gates & SBOM</li>
-          <li>Provider-agnostic routing</li>
+          <li>Coverage gates & SBOM generation</li>
+          <li>Provider-agnostic routing (multi-model)</li>
+          <li>Signed provenance + reproducible builds</li>
         </ul>
       </li>
 
-      <!-- 2 -->
+      <!-- Card 2 -->
       <li class="feature-card">
+        <div class="ico"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="22" rx="4"/><path d="M14 36h20" /></svg></div>
         <h3>Freelancer OS</h3>
-        <p>Invoices, contracts, deliverables, and AI operator handoffs out of the box.</p>
+        <p>Proposals, contracts, timelines, invoicing, and handoffs—ready-to-run with audited deliverables.</p>
+        <ul class="bullets">
+          <li>Auto-scoped SOW and acceptance criteria</li>
+          <li>Milestone artifacts + client portal</li>
+          <li>Escrow hooks and receipts</li>
+        </ul>
       </li>
 
-      <!-- 3 -->
+      <!-- Card 3 -->
       <li class="feature-card">
+        <div class="ico"><svg viewBox="0 0 48 48"><path d="M8 36V12l16-6 16 6v24l-16 6Z"/></svg></div>
         <h3>Real Estate Agent OS</h3>
-        <p>Lead funnels, MLS hooks, showing workflows, deal rooms with audit.</p>
+        <p>Lead funnels, MLS sync, showings, deal rooms, and disclosures with verifiable change history.</p>
+        <ul class="bullets">
+          <li>Auto-generated listings & ad sets</li>
+          <li>Buyer/seller pipelines + tasks</li>
+          <li>Offer workflows with audit trail</li>
+        </ul>
       </li>
 
-      <!-- 4 -->
+      <!-- Card 4 -->
       <li class="feature-card">
+        <div class="ico"><svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="8"/><path d="M10 38c0-8 28-8 28 0"/></svg></div>
         <h3>Student OS</h3>
-        <p>Research graph, citations, study plans, lab notebooks, collaboration.</p>
+        <p>Research graph, citation engine, study plans, lab notebooks, and collaboration rooms.</p>
+        <ul class="bullets">
+          <li>Source-linked notes & flashcards</li>
+          <li>Problem sets with step-checks</li>
+          <li>Team projects with review gates</li>
+        </ul>
       </li>
 
-      <!-- 5 -->
+      <!-- Card 5 -->
       <li class="feature-card soon">
+        <div class="ico"><svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="20" rx="6"/><path d="M14 36h20"/></svg></div>
         <h3>Healthcare OS <span class="badge">soon</span></h3>
-        <p>PHI-aware workflows, consent gates, and verifiable audit trails.</p>
+        <p>PHI-aware workflows, consent gates, and verifiable audit trails for clinical operators.</p>
+        <ul class="bullets">
+          <li>De-identification & consent checks</li>
+          <li>Tasking with access controls</li>
+          <li>Evidence receipts for every action</li>
+        </ul>
       </li>
 
-      <!-- 6 -->
+      <!-- Card 6 -->
       <li class="feature-card">
+        <div class="ico"><svg viewBox="0 0 48 48"><circle cx="16" cy="24" r="6"/><circle cx="32" cy="16" r="6"/><circle cx="32" cy="32" r="6"/></svg></div>
         <h3>Ecosystem Marketplace</h3>
-        <p>Operators, skills, and blueprints—publish, discover, and compose.</p>
+        <p>Operators, skills, and blueprints—publish, discover, compose, and verify with one click.</p>
+        <ul class="bullets">
+          <li>Versioned skills & reviews</li>
+          <li>One-click compose & test</li>
+          <li>Usage, cost, and reliability stats</li>
+        </ul>
       </li>
 
-      <!-- 7 -->
+      <!-- Card 7 -->
       <li class="feature-card">
+        <div class="ico"><svg viewBox="0 0 48 48"><path d="M8 34V14l16-6 16 6v20l-16 6-16-6Z"/><path d="M24 8v32"/></svg></div>
         <h3>AE Labs</h3>
-        <p>Experimental modules & proof kits from our research pipeline.</p>
+        <p>Experimental modules & proof kits straight from our research pipeline—opt-in and isolated.</p>
+        <ul class="bullets">
+          <li>Sandboxed runners with budgets</li>
+          <li>Provenance + safety interlocks</li>
+          <li>Public benchmarks</li>
+        </ul>
       </li>
     </ul>
-
-    <button class="rail-btn next" aria-label="Scroll right">›</button>
   </div>
 </section>
+
 
 
   <!-- ========== PIPELINE (glow on hover) ========== -->
