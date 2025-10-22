@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Autonomy Engine — From a sentence to a system</title>
+  <meta name="description" content="Autonomy Engine compiles intent into working, audited systems — code, tests, CI, CAD, and proofs."/>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg"/>
+  <link rel="preload" as="image" href="./assets/logo.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Autonomy Engine Home">
+        <img src="./assets/logo.svg" alt="" width="28" height="28"/>
+        <span>Autonomy Engine</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pipeline">How it works</a>
+        <a href="#demo">Demo</a>
+        <a class="btn btn-primary" href="#waitlist">Become an Operator</a>
+        <span class="socials">
+          <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+          <a href="https://x.com/autonomy_engine" aria-label="X" target="_blank" rel="noopener">𝕏</a>
+          <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner" data-reveal>
+      <div class="eyebrow">From a sentence to a system</div>
+      <h1>Autonomy Engine compiles intent into working, audited systems — <em>code, tests, CI, CAD, and proofs</em>.</h1>
+      <p class="lede">Privacy by design. Transparency by default. Intelligence that serves human purpose — not the other way around.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#waitlist">Request early access</a>
+        <a class="btn btn-ghost" href="#features">Explore features</a>
+      </div>
+      <div class="panel">
+        <ul class="panel-list">
+          <li>Scaffold projects with tests &amp; CI</li>
+          <li>Coverage gates &amp; SBOM generation</li>
+          <li>Provider-agnostic routing (multi-model)</li>
+          <li>Provenance &amp; reproducible builds</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES (Big Cards Carousel) ========== -->
+  <section id="features" class="features">
+    <div class="container" data-reveal>
+      <h2 class="section-title">Prompt → Business</h2>
+      <p class="section-kicker">Compile intent to AESL plans, scaffold projects, wire CI, and ship artifacts with receipts.</p>
+
+      <div class="features-viewport edge-fade">
+        <div class="carousel-arrows" aria-hidden="true">
+          <button type="button" id="fPrev" aria-label="Previous">‹</button>
+          <button type="button" id="fNext" aria-label="Next">›</button>
+        </div>
+        <div class="features-track" id="featuresTrack">
+          <!-- Cards seed (will auto-clone for infinite loop) -->
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🧭</span><h3>Prompt → Business</h3></div>
+            <p>Turn natural language into audited systems.</p>
+            <ul><li>Coverage gates &amp; SBOM generation</li><li>Provider-agnostic routing</li><li>Reproducible builds</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🧾</span><h3>Freelancer OS</h3></div>
+            <p>Proposals, contracts, milestones, invoicing, handoffs—done right.</p>
+            <ul><li>Auto-scoped SOW &amp; acceptance criteria</li><li>Milestone artifacts + client portal</li><li>Escrow hooks &amp; receipts</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🏠</span><h3>Real Estate OS</h3></div>
+            <p>Listings, lead pipelines, doc packs, and compliant comms.</p>
+            <ul><li>MLS sync &amp; smart templates</li><li>Offer/contract packs with audit trail</li><li>Agent/Client portals</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🎓</span><h3>Student OS</h3></div>
+            <p>Courses, research, notes, and reproducible projects.</p>
+            <ul><li>Project scaffolds &amp; CI for notebooks</li><li>Plagiarism-safe provenance</li><li>Presentations &amp; exports</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🏥</span><h3>Healthcare OS (soon)</h3></div>
+            <p>Provider tooling with privacy by design.</p>
+            <ul><li>Pipelines for forms &amp; triage</li><li>De-identification &amp; audit</li><li>FHIR adapters</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🧪</span><h3>AE Labs</h3></div>
+            <p>Experimental substrates &amp; proof kits.</p>
+            <ul><li>Sandboxed runners with budgets</li><li>Safety interlocks &amp; provenance</li><li>Public benchmarks</li></ul>
+          </article>
+
+          <article class="f-card ae-glow">
+            <div class="top"><span class="icon">🛒</span><h3>Ecosystem Marketplace</h3></div>
+            <p>Ecosystem of blueprints, agents, and adapters.</p>
+            <ul><li>Reviewed components with receipts</li><li>One-click wire-up to CI/CD</li><li>Governance &amp; revocation</li></ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PIPELINE (Infinite + Manual) ========== -->
+  <section id="pipeline" class="pipeline">
+    <div class="container" data-reveal>
+      <h2 class="section-title">How it comes together</h2>
+      <p class="section-kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate.</p>
+
+      <div class="pipeline-marquee edge-fade">
+        <div class="carousel-arrows" aria-hidden="true">
+          <button type="button" id="pPrev" aria-label="Previous">‹</button>
+          <button type="button" id="pNext" aria-label="Next">›</button>
+        </div>
+        <div class="pipeline-track" id="pipelineTrack">
+          <span class="pill">Intent</span>
+          <span class="pill">AESL</span>
+          <span class="pill">Scaffold</span>
+          <span class="pill">Tests</span>
+          <span class="pill">CI</span>
+          <span class="pill">SBOM</span>
+          <span class="pill">Deploy</span>
+          <span class="pill">Audit</span>
+          <span class="pill">Observe</span>
+          <span class="pill">Feedback</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEMO (placeholder) ========== -->
+  <section id="demo" class="embed">
+    <div class="container" data-reveal>
+      <h2 class="section-title">60-second Demo</h2>
+      <p class="section-kicker">Drop in your YouTube or Loom link when it’s ready. This is a placeholder embed.</p>
+      <iframe class="frame" src="about:blank" title="Demo placeholder"></iframe>
+    </div>
+  </section>
+
+  <!-- ========== WAITLIST (custom form) ========== -->
+  <section id="waitlist" class="waitlist">
+    <div class="container">
+      <div class="wl-wrap" data-reveal>
+        <header>
+          <h2>Early Operator Waitlist</h2>
+          <p>Join the first cohort shaping Autonomy Engine. We’ll reach out with demos, invites, and lab drops.</p>
+        </header>
+
+        <form id="wlForm" class="wl-form" novalidate>
+          <div class="grid">
+            <label>Full name
+              <input name="name" type="text" required placeholder="Ada Lovelace">
+            </label>
+            <label>Email
+              <input name="email" type="email" required placeholder="you@company.com">
+            </label>
+            <label>Company / Org
+              <input name="company" type="text" placeholder="Optional">
+            </label>
+            <label>Role
+              <input name="role" type="text" placeholder="Founder, Architect, PM…">
+            </label>
+          </div>
+
+          <label>What are you hoping to build?
+            <textarea name="use_case" rows="4" placeholder="2–3 lines on your intended use case"></textarea>
+          </label>
+
+          <fieldset class="chips">
+            <legend>Areas of interest</legend>
+            <label><input type="checkbox" name="interests" value="Freelancer OS"> Freelancer OS</label>
+            <label><input type="checkbox" name="interests" value="Real Estate OS"> Real Estate OS</label>
+            <label><input type="checkbox" name="interests" value="Student OS"> Student OS</label>
+            <label><input type="checkbox" name="interests" value="Healthcare OS"> Healthcare (soon)</label>
+            <label><input type="checkbox" name="interests" value="Marketplace"> Marketplace</label>
+            <label><input type="checkbox" name="interests" value="AE Labs"> AE Labs</label>
+          </fieldset>
+
+          <label>How did you hear about us?
+            <input name="ref" type="text" placeholder="LinkedIn, X, friend, …">
+          </label>
+
+          <label class="agree">
+            <input type="checkbox" name="agree" required>
+            I agree to receive updates related to Autonomy Engine.
+          </label>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Join the Waitlist</button>
+            <p id="wlMsg" class="wl-msg" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="foot-left">
+        <img src="./assets/logo.svg" alt="" width="20" height="20"/>
+        <span>Autonomy Engine Systems LLC · © <span id="y"></span></span>
+      </div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://x.com/autonomy_engine" target="_blank" aria-label="X">𝕏</a>
+        <a href="https://github.com/snowdenj1227-OSBuilder" target="_blank" aria-label="GitHub">GH</a>
+        <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" target="_blank" aria-label="README">R</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+
+  <!-- Waitlist submit (Formspree ready). Replace FORM_ENDPOINT with your endpoint or Worker URL. -->
+  <script>
+    const FORM_ENDPOINT = 'https://formspree.io/f/XXXXXXXX'; // TODO: replace or use your Worker URL
+    const wlForm = document.getElementById('wlForm');
+    const wlMsg  = document.getElementById('wlMsg');
+    wlForm?.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      wlMsg.textContent = 'Submitting…';
+
+      const data = new FormData(wlForm);
+      const interests = [...wlForm.querySelectorAll('input[name="interests"]:checked')].map(i=>i.value);
+      data.set('interests', interests.join(', '));
+
+      try{
+        const res = await fetch(FORM_ENDPOINT, { method:'POST', body: data, headers: { 'Accept':'application/json' }});
+        if(res.ok){ wlMsg.textContent = 'You’re on the list. Welcome!'; wlForm.reset(); }
+        else      { wlMsg.textContent = 'Could not submit. Please try again.'; }
+      }catch(err){ wlMsg.textContent = 'Network error. Please try again.'; }
+    });
+  </script>
+</body>
+</html>
