@@ -162,5 +162,6 @@ body{
 .tiny a{ color:var(--ae-text) }
 
 /* ===== Scroll reveal ===== */
-[data-reveal]{ opacity:0; transform: translateY(14px) }
+-[data-reveal]{ opacity:0; transform: translateY(14px) }
++.js [data-reveal]{ opacity:0; transform: translateY(14px) }  /* only hide when JS is on */
 .in{ opacity:1 !important; transform:none !important; transition: all .6s var(--ae-ease) }
