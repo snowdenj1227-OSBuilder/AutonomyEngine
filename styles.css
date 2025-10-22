@@ -102,6 +102,45 @@ a:hover{text-decoration:underline}
   background: linear-gradient(#0b1016,#0d141c);
   border-bottom:1px solid rgba(255,255,255,.06);
 }
+/* ==== HERO ANIMATED BACKDROP ==== */
+.hero {
+  position: relative;
+  overflow: hidden;           /* keeps bg inside */
+  isolation: isolate;         /* ensures z-index works as a new stacking context */
+}
+
+.hero .hero-bg {
+  position: absolute;
+  inset: -20%;                /* bleed outside a bit for smoother motion */
+  z-index: -1;                /* behind content */
+  pointer-events: none;
+  opacity: 0.5;               /* subtle; adjust 0.35–0.7 */
+  filter: blur(30px) saturate(120%);
+  background:
+    radial-gradient(60% 60% at 20% 20%, #41e0c9 0%, transparent 60%),
+    radial-gradient(55% 55% at 80% 30%, #ff6f61 0%, transparent 60%),
+    radial-gradient(70% 70% at 50% 80%, #2ad3ff 0%, transparent 70%);
+  animation: aeFloat 14s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+/* gentle breathing of hue/position */
+@keyframes aeFloat {
+  0%   { transform: translate3d(0,0,0) scale(1);     filter: blur(28px) saturate(115%); }
+  25%  { transform: translate3d(-3%, 2%, 0) scale(1.04); filter: blur(34px) saturate(125%); }
+  50%  { transform: translate3d(2%, -2%, 0) scale(1.02); filter: blur(30px) saturate(120%); }
+  75%  { transform: translate3d(-1%, 1%, 0) scale(1.06); filter: blur(36px) saturate(130%); }
+  100% { transform: translate3d(0,0,0) scale(1);     filter: blur(28px) saturate(115%); }
+}
+
+/* respects “Reduce motion” */
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-bg { animation: none; }
+}
+
+/* make sure hero text stays above */
+.hero .container { position: relative; z-index: 1; }
+
 .hero::before{
   content:""; position:absolute; inset:-15% -10% -25% -10%; z-index:-1; opacity:.7;
   background:
