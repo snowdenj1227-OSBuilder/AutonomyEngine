@@ -1,13 +1,20 @@
 /* Autonomy Engine — refined dark site */
 :root{
-  --bg:#0e1217;
-  --bg-elev:#141a22;
-  --text:#c9d4e5;
-  --muted:#93a3b8;
-  --brand:#43d7c7; /* teal */
-  --accent:#f07c73; /* coral */
-  --border:#263041;
+  --ae-teal:#2db9ad;      /* logo teal */
+  --ae-coral:#ea7262;     /* logo coral */
+  --ae-aqua:#7de3e8;      /* light aqua accent */
+  --ae-slate:#1f2430;     /* slate */
+  --ae-ink:#0e1116;       /* ink bg */
+  --ae-text:#e8f0f2;
+  --ae-muted:#97a3ab;
+
+  --ae-radius:10px;       /* slightly rounded, not bubbly */
+  --ae-shadow:0 10px 30px -12px rgba(0,0,0,.45);
+
+  --ae-ease: cubic-bezier(.22,.61,.36,1);
+  --ae-dur: 800ms;
 }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
 a{color:var(--brand);text-decoration:none}
