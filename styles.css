@@ -14,6 +14,98 @@
   --ae-ease: cubic-bezier(.22,.61,.36,1);
   --ae-dur: 800ms;
 }
+:root{
+  --ae-teal:#41e0c9;
+  --ae-coral:#ff6f61;
+  --ae-ink:#0e1217;
+  --ae-card:#1a2230;
+  --ae-border:rgba(255,255,255,.12);
+}
+
+/* Hide browser scrollbars (still scrollable) */
+html{ scrollbar-width:none; }
+html::-webkit-scrollbar{ width:0; height:0; }
+
+/* Buttons + hovers using brand colors */
+.btn-primary { background: var(--ae-teal); border-color: transparent; }
+.btn-primary:hover { filter: brightness(1.08); }
+
+.btn-ghost { border:1px solid var(--ae-border); }
+.btn-ghost:hover { border-color: var(--ae-teal); color: var(--ae-teal); }
+
+/* Hover glow utility you can reuse anywhere */
+.ae-glow:hover{
+  box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset,
+              0 12px 30px -12px rgba(65,224,201,.35),
+              0 6px 18px -10px rgba(255,111,97,.25);
+  transform: translateY(-1px);
+}
+
+/* ===== FEATURES big cards, infinite rail ===== */
+.features { padding-block: 72px; }
+.features .section-title{ font-size: clamp(1.6rem,1.2rem+1vw,2rem); margin-bottom: 10px;}
+.features .section-kicker{ opacity:.7; margin-bottom: 24px;}
+
+.features-viewport{
+  position: relative;
+  overflow: hidden;           /* hide wrapping */
+}
+
+.features-track{
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+  animation: featuresScroll 40s linear infinite;
+}
+.features-track:hover{ animation-play-state: paused; }
+
+@keyframes featuresScroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* we’ll duplicate items via JS */
+}
+
+.f-card{
+  flex: 0 0 min(520px, 88vw);          /* big cards */
+  background: linear-gradient(180deg,#1b2433, #161d29);
+  border: 1px solid var(--ae-border);
+  border-radius: 16px;
+  padding: 22px 22px 20px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.f-card:hover{ border-color: rgba(65,224,201,.45); }
+.f-card.ae-glow:hover{ transform: translateY(-2px); }
+
+.f-card .top{
+  display:flex; align-items:center; gap:14px; margin-bottom:10px;
+}
+.f-card .icon{
+  width:40px; height:40px; border-radius:10px;
+  background: radial-gradient(120% 120% at 30% 20%, var(--ae-teal), transparent 70%),
+              radial-gradient(120% 120% at 70% 80%, var(--ae-coral), transparent 70%);
+  display:inline-grid; place-items:center; color:#0d1117; font-weight:700;
+}
+.f-card h3{ margin:0; font-size:1.1rem; }
+.f-card p{ margin:0 0 10px 0; opacity:.85; }
+.f-card ul{ margin:0; padding-left:18px; opacity:.9; }
+.f-card li{ margin:4px 0; }
+
+/* “How it comes together” pill buttons + glow */
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:999px;
+  background:#152033; border:1px solid var(--ae-border);
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+}
+.pill:hover{ border-color:rgba(65,224,201,.5); box-shadow:0 8px 26px -14px rgba(65,224,201,.35); transform:translateY(-1px); }
+
+.pipeline-marquee{ overflow:hidden; position:relative; margin-top:18px;}
+.pipeline-track{ display:flex; gap:12px; white-space:nowrap; animation: pipeScroll 24s linear infinite; }
+.pipeline-track:hover{ animation-play-state: paused; }
+
+@keyframes pipeScroll{
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-50%); } /* duplicated by JS */
+}
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
