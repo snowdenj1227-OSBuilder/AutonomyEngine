@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autonomy Engine — From a sentence to a system.</title>
+  <meta name="description" content="Autonomy Engine compiles intent into audited systems — code, tests, CAD, and proofs." />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="/" class="brand">
+      <img src="./assets/ae-logo.svg" alt="" width="32" height="32" onerror="this.style.display='none'"/>
+      <span>Autonomy&nbsp;Engine</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#demo">Demo</a>
+      <a href="#typeform" class="btn btn--small btn--primary">Become an Operator</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <h1>From a sentence to a system.</h1>
+      <p>Autonomy Engine compiles intent into audited systems — <strong>code</strong>, <strong>tests</strong>, <strong>CAD</strong>, and <strong>proofs</strong>.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#typeform">Become an Operator</a>
+        <a class="btn btn--teal" href="#features">Explore features</a>
+        <a class="btn btn--ghost" href="#demo">Watch demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section features" data-reveal>
+    <div class="section-head">
+      <div class="wrap wrap--head">
+        <h2>What the Engine ships with</h2>
+        <p class="muted">A focused stack that turns intent into audited outputs — and real businesses.</p>
+      </div>
+      <div class="feature-arrows wrap wrap--head">
+        <button class="feat-btn prev" aria-label="Previous">‹</button>
+        <button class="feat-btn next" aria-label="Next">›</button>
+      </div>
+    </div>
+
+    <div class="feature-rail">
+      <ul class="feature-track" id="featureTrack" tabindex="0" aria-label="Autonomy Engine features">
+        <li class="feature-card">
+          <div class="ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="18" r="10"/><circle cx="30" cy="30" r="10"/></svg>
+          </div>
+          <h3>Prompt → Business</h3>
+          <p>Compile natural language into AESL plans; scaffold code + tests; wire CI; ship artifacts with receipts.</p>
+          <ul class="bullets">
+            <li>Coverage gates &amp; SBOM generation</li>
+            <li>Provider‑agnostic routing (multi‑model)</li>
+            <li>Provenance &amp; reproducible builds</li>
+          </ul>
+        </li>
+
+        <li class="feature-card">
+          <div class="ico"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="22" rx="4"/><path d="M14 36h20"/></svg></div>
+          <h3>Freelancer OS</h3>
+          <p>Proposals, contracts, timelines, invoicing, and handoffs—ready-to-run with audited deliverables.</p>
+          <ul class="bullets">
+            <li>Auto-scoped SOW &amp; acceptance criteria</li>
+            <li>Milestone artifacts + client portal</li>
+            <li>Escrow hooks and receipts</li>
+          </ul>
+        </li>
+
+        <li class="feature-card">
+          <div class="ico"><svg viewBox="0 0 48 48"><path d="M8 36V12l16-6 16 6v24l-16 6Z"/></svg></div>
+          <h3>Real Estate Agent OS</h3>
+          <p>Lead funnels, MLS sync, showings, deal rooms, and disclosures with verifiable change history.</p>
+          <ul class="bullets">
+            <li>Auto-generated listings &amp; ad sets</li>
+            <li>Buyer/seller pipelines + tasks</li>
+            <li>Offer workflows with audit trail</li>
+          </ul>
+        </li>
+
+        <li class="feature-card">
+          <div class="ico"><svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="8"/><path d="M10 38c0-8 28-8 28 0"/></svg></div>
+          <h3>Student OS</h3>
+          <p>Research graph, citation engine, study plans, lab notebooks, and collaboration rooms.</p>
+          <ul class="bullets">
+            <li>Source‑linked notes &amp; flashcards</li>
+            <li>Problem sets with step‑checks</li>
+            <li>Team projects with review gates</li>
+          </ul>
+        </li>
+
+        <li class="feature-card soon">
+          <div class="ico"><svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="20" rx="6"/><path d="M14 36h20"/></svg></div>
+          <h3>Healthcare OS <span class="badge">soon</span></h3>
+          <p>PHI‑aware workflows, consent gates, and verifiable audit trails for clinical operators.</p>
+          <ul class="bullets">
+            <li>De‑identification &amp; consent checks</li>
+            <li>Tasking with access controls</li>
+            <li>Evidence receipts for every action</li>
+          </ul>
+        </li>
+
+        <li class="feature-card">
+          <div class="ico"><svg viewBox="0 0 48 48"><circle cx="16" cy="24" r="6"/><circle cx="32" cy="16" r="6"/><circle cx="32" cy="32" r="6"/></svg></div>
+          <h3>Ecosystem Marketplace</h3>
+          <p>Operators, skills, and blueprints—publish, discover, compose, and verify with one click.</p>
+          <ul class="bullets">
+            <li>Versioned skills &amp; reviews</li>
+            <li>One‑click compose &amp; test</li>
+            <li>Usage, cost, and reliability stats</li>
+          </ul>
+        </li>
+
+        <li class="feature-card">
+          <div class="ico"><svg viewBox="0 0 48 48"><path d="M8 34V14l16-6 16 6v20l-16 6-16-6Z"/><path d="M24 8v32"/></svg></div>
+          <h3>AE Labs</h3>
+          <p>Experimental modules &amp; proof kits straight from our research pipeline—opt‑in and isolated.</p>
+          <ul class="bullets">
+            <li>Sandboxed runners with budgets</li>
+            <li>Provenance + safety interlocks</li>
+            <li>Public benchmarks</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how" class="section how" data-reveal>
+    <div class="wrap">
+      <header class="section-head section-head--solo">
+        <div>
+          <h2>How it comes together</h2>
+          <p class="muted">Intent → AESL → scaffold → tests → CI → deploy → audit.</p>
+        </div>
+      </header>
+    </div>
+
+    <div class="marquee">
+      <ul class="belt" id="belt">
+        <li class="chip">Intent</li>
+        <li class="chip">AESL</li>
+        <li class="chip">Scaffold</li>
+        <li class="chip">Tests</li>
+        <li class="chip">CI</li>
+        <li class="chip">SBOM</li>
+        <li class="chip">Deploy</li>
+        <li class="chip">Audit</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo" class="section" data-reveal>
+    <div class="wrap">
+      <h2>60-second Demo</h2>
+      <div class="card" style="aspect-ratio:16/9;display:grid;place-items:center;">
+        <p class="muted">Demo coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPEFORM -->
+  <section id="typeform" class="section" data-reveal>
+    <div class="wrap"><h2>Become an Operator</h2></div>
+    <div class="card embed">
+      <iframe
+        src="https://form.typeform.com/to/t3arwtL2"
+        style="width:100%;height:720px;border:0;"
+        allow="camera; microphone; autoplay; encrypted-media; fullscreen; clipboard-read; clipboard-write">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <nav class="socials">
+      <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b" aria-label="LinkedIn">in</a>
+      <a href="https://x.com/autonomy_engine" aria-label="X">𝕏</a>
+      <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub">GH</a>
+      <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" aria-label="Readme">📄</a>
+    </nav>
+    <p class="tiny">© <span id="y"></span> Autonomy Engine Systems LLC</p>
+  </footer>
+
+  <script defer src="./assets/app.js"></script>
+</body>
+</html>
