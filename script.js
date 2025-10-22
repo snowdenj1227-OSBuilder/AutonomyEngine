@@ -52,3 +52,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500);
   }
 });
+<script>
+(function () {
+  const track = document.getElementById('pipelineTrack');
+  const marquee = document.getElementById('pipelineMarquee');
+  if (!track || !marquee) return;
+
+  // 1) Build a long track by cloning the initial set until we exceed a 3x viewport width.
+  const seed = Array.from(track.children);
+  function extendTrack() {
+    const needed = (window.innerWidth * 3);
+    while (track.scrollWidth < needed) {
+      seed.forEach(node => track.appendChild(node.cloneNode(true)));
+    }
+  }
+  extendTrack();
+  window.addEventListener('resize', () => {
+    // If someone shrinks the window, extend again if needed.
+    extendTrack();
+  });
+
+  // 2) Animate left forever, recycling cards seamlessly.
+  let x = 0;
+  let speed = 0.6;                           // feel free to tweak
+  let paused = false;
+
+  function tick() {
+    if (!paused) {
+      x -= speed;
+      // If the first card is fully out of view, move it to the end and bump x forward by its width.
+      const first = track.firstElementChild;
+      if (first) {
+        const w = first.getBoundingClientRect().width + 24; // +gap
+        if (Math.abs(x) >= w) {
+          track.appendChild(first);
+          x += w;
+        }
+      }
+      track.style.transform = `translateX(${x}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  // 3) Pause on hover for better readability.
+  marquee.addEventListener('mouseenter', () => paused = true);
+  marquee.addEventListener('mouseleave', () => paused = false);
+})();
+</script>
