@@ -4,283 +4,227 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Autonomy Engine — From a sentence to a system</title>
-  <meta name="description" content="Autonomy Engine compiles intent into working, audited systems — code, tests, CAD, and proofs.">
 
-  <!-- Fonts -->
-  <link rel="preload" href="./assets/fonts/AutonomyEngine.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Favicon (inline) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#94a3b8"/>
+      </linearGradient>
+      <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+        <stop stop-color="#f43f5e"/><stop offset="1" stop-color="#64748b"/>
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="30" fill="#0f172a"/>
+    <path d="M17 18c10-7 23 1 23 12s-13 19-23 12c7 2 13-3 13-12S24 16 17 18z" fill="url(#g1)"/>
+    <path d="M47 46c-10 7-23-1-23-12s13-19 23-12c-7-2-13 3-13 12s6 14 13 12z" fill="url(#g2)"/>
+  </svg>'>
 
-  <!-- Styles -->
-  <link rel="preload" href="./assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="./assets/css/styles.css"></noscript>
-
-  <!-- Favicon + Icons -->
-  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
-  <link rel="manifest" href="./assets/icons/site.webmanifest">
-
-  <!-- Scripts -->
-  <script type="module" src="./assets/js/app.js" defer></script>
-
-  <!-- Accessibility + JS trigger -->
-  <script>
-    document.documentElement.classList.add('js');
-  </script>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-
 <body>
+
   <!-- NAV -->
-  <header class="nav" id="top">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Autonomy Engine Home">
-        <img src="assets/icons/logo.svg" alt="" width="28" height="28"/>
-        <span>Autonomy Engine</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-        <a href="#demo">Demo</a>
-        <a class="btn btn-primary" href="#waitlist">Become an Operator</a>
-        <span class="socials">
-          <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank" rel="noopener" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM4 9h2v12H4zM9 9h1.9v1.64h.03c.26-.5 1-1.64 3.07-1.64C17 9 18 11 18 14.23V21h-2v-6.1c0-1.45-.03-3.33-2.03-3.33-2.04 0-2.35 1.59-2.35 3.22V21H9z"/></svg>
-          </a>
-          <a href="https://x.com/autonomy_engine" aria-label="X" target="_blank" rel="noopener" title="X">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.86 7.83L22 22h-6.59l-5.16-6.7L3.6 22H1l7.36-8.4L2 2h6.66l4.66 6.19L18.244 2zM7.46 3.5H4.62l11.94 16.97h2.92L7.46 3.5z"/></svg>
-          </a>
-          <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub" target="_blank" rel="noopener" title="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.11-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.09 1.86 2.86 1.32 3.56 1.01.11-.8.43-1.32.78-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.32.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.23 0 4.62-2.81 5.65-5.49 5.95.45.38.85 1.12.85 2.26v3.35c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
-          </a>
-          <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" aria-label="README" target="_blank" rel="noopener" title="README">
-            <svg viewBox="0 0 24 24"><path d="M4 3h13a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H4zM6 7h9v2H6zm0 4h9v2H6z"/></svg>
-          </a>
-        </span>
-      </nav>
-    </div>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Autonomy Engine Home">
+      <!-- Inline logo (matches favicon style) -->
+      <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#94a3b8"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="1" y1="0" x2="0" y2="1">
+            <stop stop-color="#f43f5e"/><stop offset="1" stop-color="#64748b"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#0f172a"/>
+        <path d="M17 18c10-7 23 1 23 12s-13 19-23 12c7 2 13-3 13-12S24 16 17 18z" fill="url(#lg1)"/>
+        <path d="M47 46c-10 7-23-1-23-12s13-19 23-12c-7-2-13 3-13 12s6 14 13 12z" fill="url(#lg2)"/>
+      </svg>
+      <span>Autonomy Engine</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#demo">Demo</a>
+      <a class="btn btn-primary" href="#waitlist">Become an Operator</a>
+    </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="top" aria-label="Hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-inner" data-reveal>
-      <div class="eyebrow">From a sentence to a system</div>
-      <h1>Autonomy Engine compiles intent into working, audited systems — <em>code, tests, CI, CAD, and proofs</em>.</h1>
-      <p class="lede">Privacy by design. Transparency by default. Intelligence that serves human purpose — not the other way around.</p>
-      <div class="hero-ctas">
+    <div class="container hero-inner">
+      <p class="eyebrow">From a sentence to a system</p>
+      <h1>Autonomy Engine compiles intent into working, audited systems —
+        <em>code, tests, CI, CAD</em>, and proofs.</h1>
+
+      <p class="lead">
+        Privacy by design. Transparency by default. Intelligence that serves human purpose — not the other way around.
+      </p>
+
+      <div class="hero-actions">
         <a class="btn btn-primary" href="#waitlist">Request early access</a>
         <a class="btn btn-ghost" href="#features">Explore features</a>
       </div>
-      <div class="panel">
-        <ul class="panel-list">
-          <li>Scaffold projects with tests &amp; CI</li>
-          <li>Coverage gates &amp; SBOM generation</li>
-          <li>Provider-agnostic routing (multi-model)</li>
-          <li>Provenance &amp; reproducible builds</li>
-        </ul>
-      </div>
+
+      <ul class="bullets">
+        <li>Scaffold projects with tests &amp; CI</li>
+        <li>Coverage gates &amp; SBOM generation</li>
+        <li>Provider-agnostic routing (multi-model)</li>
+        <li>Provenance &amp; reproducible builds</li>
+      </ul>
     </div>
   </section>
 
-  <!-- FEATURES: one-at-a-time manual big cards -->
-  <section id="features" class="features">
-    <div class="container" data-reveal>
-      <h2 class="section-title">Prompt → Business</h2>
-      <p class="section-kicker">Compile intent to AESL plans, scaffold projects, wire CI, and ship artifacts with receipts.</p>
+  <!-- FEATURES (large card carousel: auto + manual) -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Features</h2>
+        <p>One focused capability at a time. Drag or let it glide.</p>
+      </div>
 
-      <div class="carousel one-at-a-time" id="featCarousel">
-        <button class="car-arrow prev" type="button" aria-label="Previous">‹</button>
-
-        <div class="car-track" id="featTrack" tabindex="0">
-          <article class="f-card">
-            <div class="top"><span class="icon">🧭</span><h3>Prompt → Business</h3></div>
-            <p>Turn natural language into audited systems.</p>
+      <div class="carousel" data-autoplay="true" data-interval="3800" aria-label="Feature cards carousel">
+        <div class="track">
+          <!-- one big card at a time -->
+          <article class="card feature">
+            <div class="icon i-briefcase"></div>
+            <h3>Prompt → Business</h3>
+            <p>Compile natural language into AESL plans, scaffold code + tests, wire CI, ship artifacts with receipts.</p>
             <ul>
-              <li>Coverage gates &amp; SBOM generation</li>
-              <li>Provider-agnostic routing (multi-model)</li>
-              <li>Provenance &amp; reproducible builds</li>
+              <li>Coverage gates &amp; SBOM</li>
+              <li>Provider-agnostic routing</li>
+              <li>Reproducible builds</li>
             </ul>
           </article>
 
-          <article class="f-card">
-            <div class="top"><span class="icon">🧾</span><h3>Freelancer OS</h3></div>
-            <p>Proposals, contracts, milestones, invoicing, handoffs—done right.</p>
+          <article class="card feature">
+            <div class="icon i-freelance"></div>
+            <h3>Freelancer OS</h3>
+            <p>Proposals, SOWs, milestone artifacts, invoicing, client portals — fully auditable from day one.</p>
             <ul>
-              <li>Auto-scoped SOW &amp; acceptance criteria</li>
-              <li>Milestone artifacts + client portal</li>
-              <li>Escrow hooks &amp; receipts</li>
+              <li>Auto-scoped SOW &amp; acceptance</li>
+              <li>Milestone receipts</li>
+              <li>Escrow hooks</li>
             </ul>
           </article>
 
-          <article class="f-card">
-            <div class="top"><span class="icon">🏠</span><h3>Real Estate OS</h3></div>
-            <p>Listings, lead pipelines, doc packs, and compliant comms.</p>
-            <ul>
-              <li>MLS sync &amp; smart templates</li>
-              <li>Offer/contract packs with audit trail</li>
-              <li>Agent/Client portals</li>
-            </ul>
+          <article class="card feature">
+            <div class="icon i-estate"></div>
+            <h3>Real Estate OS</h3>
+            <p>Listings, lead pipelines, doc packs, MLS sync, agents/clients portals, compliant comms.</p>
           </article>
 
-          <article class="f-card">
-            <div class="top"><span class="icon">🎓</span><h3>Student OS</h3></div>
-            <p>Courses, research, notes, and reproducible projects.</p>
-            <ul>
-              <li>Project scaffolds &amp; CI for notebooks</li>
-              <li>Plagiarism-safe provenance</li>
-              <li>Presentations &amp; exports</li>
-            </ul>
+          <article class="card feature">
+            <div class="icon i-student"></div>
+            <h3>Student OS</h3>
+            <p>Assignments orchestration, citation integrity, experiment tracking, portfolio export.</p>
           </article>
 
-          <article class="f-card">
-            <div class="top"><span class="icon">🏥</span><h3>Healthcare OS (soon)</h3></div>
-            <p>Provider tooling with privacy by design.</p>
-            <ul>
-              <li>Pipelines for forms &amp; triage</li>
-              <li>De-identification &amp; audit</li>
-              <li>FHIR adapters</li>
-            </ul>
-          </article>
-
-          <article class="f-card">
-            <div class="top"><span class="icon">🧪</span><h3>AE Labs</h3></div>
-            <p>Experimental substrates &amp; proof kits.</p>
-            <ul>
-              <li>Sandboxed runners with budgets</li>
-              <li>Safety interlocks &amp; provenance</li>
-              <li>Public benchmarks</li>
-            </ul>
-          </article>
-
-          <article class="f-card">
-            <div class="top"><span class="icon">🛒</span><h3>Ecosystem Marketplace</h3></div>
-            <p>Ecosystem of blueprints, agents, and adapters.</p>
-            <ul>
-              <li>Reviewed components with receipts</li>
-              <li>One-click wire-up to CI/CD</li>
-              <li>Governance &amp; revocation</li>
-            </ul>
+          <article class="card feature">
+            <div class="icon i-labs"></div>
+            <h3>AE Labs</h3>
+            <p>Experimental modules straight from research: sandboxes, provenance interlocks, public benchmarks.</p>
           </article>
         </div>
 
-        <button class="car-arrow next" type="button" aria-label="Next">›</button>
+        <div class="dots" aria-label="Carousel pagination"></div>
       </div>
-
-      <div class="car-dots" id="featDots" aria-label="Feature slides"></div>
     </div>
   </section>
 
-  <!-- HOW IT COMES TOGETHER: big cards + auto-scroll -->
-  <section id="how" class="pipeline">
-    <div class="container" data-reveal>
-      <h2 class="section-title">How it comes together</h2>
-      <p class="section-kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate.</p>
+  <!-- HOW IT COMES TOGETHER (auto-scroll ribbon of big icon chips) -->
+  <section id="how" class="section">
+    <div class="container">
+      <h2>How it comes together</h2>
+      <p class="kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate.</p>
 
-      <div class="pipeline-viewport" aria-label="Build pipeline (auto-scroll)">
-        <div class="pipeline-track" id="pipeTrack">
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/intent.svg" width="24" height="24" alt=""/></div><div class="p-title">Intent</div><div class="p-blurb">Natural-language requirements captured as spec.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/aesl.svg" width="24" height="24" alt=""/></div><div class="p-title">AESL</div><div class="p-blurb">Autonomy Engine Scripting Language (plan &amp; control).</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/scaffold.svg" width="24" height="24" alt=""/></div><div class="p-title">Scaffold</div><div class="p-blurb">Generate projects, tests, CI, infra templates.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/tests.svg" width="24" height="24" alt=""/></div><div class="p-title">Tests &amp; CI</div><div class="p-blurb">Coverage gates, quality bars, reproducible builds.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/sbom.svg" width="24" height="24" alt=""/></div><div class="p-title">SBOM</div><div class="p-blurb">Signed provenance &amp; software bill of materials.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/deploy.svg" width="24" height="24" alt=""/></div><div class="p-title">Deploy</div><div class="p-blurb">Provider-agnostic routing (multi-model &amp; cloud).</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/audit.svg" width="24" height="24" alt=""/></div><div class="p-title">Audit</div><div class="p-blurb">Receipts, evidence, tamper-evident trails.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/observe.svg" width="24" height="24" alt=""/></div><div class="p-title">Observe</div><div class="p-blurb">Traces, telemetry, drift detection, safe rollback.</div></article>
-          <article class="p-card"><div class="p-icon"><img src="assets/icons/optimize.svg" width="24" height="24" alt=""/></div><div class="p-title">Optimize</div><div class="p-blurb">Feedback to intent → continual improvement loop.</div></article>
+      <div class="ribbon" data-autoplay="true" data-speed="0.5" aria-label="Process ribbon">
+        <div class="ribbon-track">
+          <div class="chip"><span class="chip-icon i-intent"></span>Intent</div>
+          <div class="chip"><span class="chip-icon i-aesl"></span>AESL</div>
+          <div class="chip"><span class="chip-icon i-scaffold"></span>Scaffold</div>
+          <div class="chip"><span class="chip-icon i-tests"></span>Tests</div>
+          <div class="chip"><span class="chip-icon i-ci"></span>CI</div>
+          <div class="chip"><span class="chip-icon i-sbom"></span>SBOM</div>
+          <div class="chip"><span class="chip-icon i-deploy"></span>Deploy</div>
+          <div class="chip"><span class="chip-icon i-audit"></span>Audit</div>
+          <div class="chip"><span class="chip-icon i-observe"></span>Observe</div>
+          <div class="chip"><span class="chip-icon i-optimize"></span>Optimize</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- DEMO -->
-  <section id="demo" class="embed">
-    <div class="container" data-reveal>
-      <h2 class="section-title">60-second Demo</h2>
-      <p class="section-kicker">Drop in your YouTube or Loom link when it’s ready. This is a placeholder embed.</p>
-      <iframe class="frame" src="about:blank" title="Demo placeholder"></iframe>
+  <section id="demo" class="section">
+    <div class="container">
+      <h2>60-second Demo</h2>
+      <p>Drop in your YouTube or Loom link when it’s ready. This is a placeholder embed.</p>
+      <div class="video">
+        <div class="video-ph">Your demo goes here</div>
+      </div>
     </div>
   </section>
 
   <!-- WAITLIST -->
-  <section id="waitlist" class="waitlist">
+  <section id="waitlist" class="section">
     <div class="container">
-      <div class="wl-wrap" data-reveal>
-        <header>
-          <h2>Early Operator Waitlist</h2>
-          <p>Join the first cohort shaping Autonomy Engine. We’ll reach out with demos, invites, and lab drops.</p>
-        </header>
+      <h2>Early Operator Waitlist</h2>
+      <p>Get early access invites, live demos, and the first vertical OS drops.</p>
 
-        <form id="wlForm" class="wl-form" novalidate>
-          <div class="grid">
-            <label>Full name
-              <input name="name" type="text" required placeholder="Ada Lovelace">
-            </label>
-            <label>Email
-              <input name="email" type="email" required placeholder="you@company.com">
-            </label>
-            <label>Company / Org
-              <input name="company" type="text" placeholder="Optional">
-            </label>
-            <label>Role
-              <input name="role" type="text" placeholder="Founder, Architect, PM…">
-            </label>
-          </div>
-
-          <label>What are you hoping to build?
-            <textarea name="use_case" rows="4" placeholder="2–3 lines on your intended use case"></textarea>
-          </label>
-
-          <fieldset class="chips">
-            <legend>Areas of interest</legend>
-            <label><input type="checkbox" name="interests" value="Freelancer OS"> Freelancer OS</label>
-            <label><input type="checkbox" name="interests" value="Real Estate OS"> Real Estate OS</label>
-            <label><input type="checkbox" name="interests" value="Student OS"> Student OS</label>
-            <label><input type="checkbox" name="interests" value="Healthcare OS"> Healthcare (soon)</label>
-            <label><input type="checkbox" name="interests" value="Marketplace"> Marketplace</label>
-            <label><input type="checkbox" name="interests" value="AE Labs"> AE Labs</label>
-          </fieldset>
-
-          <label>How did you hear about us?
-            <input name="ref" type="text" placeholder="LinkedIn, X, friend, …">
-          </label>
-
-          <label class="agree">
-            <input type="checkbox" name="agree" required>
-            I agree to receive updates related to Autonomy Engine.
-          </label>
-
-          <div class="actions">
-            <button class="btn btn-primary" type="submit">Join the Waitlist</button>
-            <p id="wlMsg" class="wl-msg" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
+      <form class="waitlist" action="https://formspree.io/f/mayvjajk" method="POST">
+        <label>
+          <span>Name</span>
+          <input required type="text" name="name" placeholder="Jane Doe">
+        </label>
+        <label>
+          <span>Email</span>
+          <input required type="email" name="email" placeholder="jane@company.com">
+        </label>
+        <label>
+          <span>Role</span>
+          <input type="text" name="role" placeholder="Founder / Engineer / Operator">
+        </label>
+        <button class="btn btn-primary" type="submit">Join Waitlist</button>
+        <p class="tiny">We’ll only email when there’s something worth your time.</p>
+      </form>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="foot-left">
-        <img src="assets/icons/logo.svg" alt="" width="20" height="20"/>
-        <span>Autonomy Engine Systems LLC · © <span id="y"></span></span>
-      </div>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM4 9h2v12H4zM9 9h1.9v1.64h.03c.26-.5 1-1.64 3.07-1.64C17 9 18 11 18 14.23V21h-2v-6.1c0-1.45-.03-3.33-2.03-3.33-2.04 0-2.35 1.59-2.35 3.22V21H9z"/></svg>
+      <span class="foot-brand">
+        <svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0f172a"/>
+          <path d="M17 18c10-7 23 1 23 12s-13 19-23 12c7 2 13-3 13-12S24 16 17 18z" fill="#2dd4bf"/>
+          <path d="M47 46c-10 7-23-1-23-12s13-19 23-12c-7-2-13 3-13 12s6 14 13 12z" fill="#f43f5e"/>
+        </svg>
+        Autonomy Engine Systems LLC
+      </span>
+
+      <nav class="socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b" aria-label="LinkedIn" class="sbtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2 1.4-2 2.9V21h-4z"/></svg>
         </a>
-        <a href="https://x.com/autonomy_engine" target="_blank" aria-label="X">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.86 7.83L22 22h-6.59l-5.16-6.7L3.6 22H1l7.36-8.4L2 2h6.66l4.66 6.19L18.244 2zM7.46 3.5H4.62l11.94 16.97h2.92L7.46 3.5z"/></svg>
+        <a href="https://x.com/autonomy_engine" aria-label="X" class="sbtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-7 8.1L23.5 22H17l-5-6.7L5.3 22H2l7.6-8.8L.8 2h6.6l4.5 6L18.9 2z"/></svg>
         </a>
-        <a href="https://github.com/snowdenj1227-OSBuilder" target="_blank" aria-label="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.11-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.09 1.86 2.86 1.32 3.56 1.01.11-.8.43-1.32.78-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.32.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.23 0 4.62-2.81 5.65-5.49 5.95.45.38.85 1.12.85 2.26v3.35c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+        <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub" class="sbtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.9 3.2 9 7.6 10.4.6.1.8-.3.8-.6v-2c-3.1.7-3.8-1.3-3.8-1.3-.6-1.3-1.5-1.6-1.5-1.6-1.2-.8.1-.8.1-.8 1.3.1 2 .  1.4 2 .  1.4 1.1 2 2.9 1.4 3.6 1 .1-.8.4-1.4.7-1.8-2.5-.3-5.1-1.3-5.1-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.3 0 0 1.1-.4 3.4 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.2-1.7 3.3-1.3 3.3-1.3.7 1.7.2 3 .1 3.3.8.8 1.3 1.9 1.3 3.2 0 4.5-2.6 5.5-5.1 5.8.4.3.8 1 .8 2v3c0 .3.2.7.8.6 4.4-1.4 7.6-5.5 7.6-10.4C23.1 5.3 18.3.5 12 .5z"/></svg>
         </a>
-        <a href="https://github.com/snowdenj1227-OSBuilder/Autonomy-Engine-Public/blob/main/README.md" target="_blank" aria-label="README">
-          <svg viewBox="0 0 24 24"><path d="M4 3h13a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H4zM6 7h9v2H6zm0 4h9v2H6z"/></svg>
+        <a href="mailto:operator@autonomyengine.net" aria-label="Email" class="sbtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M2 4h20v16H2z" opacity=".3"/><path fill="currentColor" d="M22 6v12H2V6l10 7zM2 6l10 7L22 6H2z"/></svg>
         </a>
-      </div>
+      </nav>
     </div>
   </footer>
 
-  <script src="assets/js/app.js" defer></script>
-  <script>const FORM_ENDPOINT='https://formspree.io/f/XXXXXXXX';</script>
+  <script src="./assets/js/app.js" defer></script>
 </body>
 </html>
