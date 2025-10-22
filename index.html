@@ -70,29 +70,46 @@
     .socials a{ display:grid; place-items:center; width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.06); outline:1px solid var(--ae-line) }
     .socials a:hover{ outline-color:var(--ae-focus); box-shadow:var(--ae-glow) }
 
-    /* ====== Hero ====== */
-    .hero{ position:relative; padding:72px 0 40px; overflow:hidden; }
-    .hero-bg{
-      position:absolute; inset:-40% -10% -10% -10%; z-index:-1;
-      background:
-        radial-gradient(60% 60% at 15% 30%, rgba(98,243,214,.25), transparent 60%),
-        radial-gradient(70% 70% at 85% 20%, rgba(253,122,116,.25), transparent 60%),
-        radial-gradient(90% 90% at 50% 100%, rgba(120,150,255,.18), transparent 60%);
-      filter: blur(48px) saturate(1.2) brightness(1.1);
-      animation: drift 14s ease-in-out infinite alternate;
-    }
-    @keyframes drift{
-      0%{ transform: translate3d(0,0,0) scale(1) rotate(0.001deg) }
-      100%{ transform: translate3d(0,-6%,0) scale(1.05) rotate(0.001deg) }
-    }
-    .hero h1{ font-size: clamp(32px, 5vw, 56px); line-height:1.05; margin:0 0 16px; letter-spacing:.2px }
-    .eyebrow{ color:var(--ae-ink-mute); text-transform:uppercase; letter-spacing:.16em; font-weight:700; font-size:12px; margin-bottom:12px }
-    .lede{ font-size: clamp(16px, 2vw, 20px); color:var(--ae-ink-dim); max-width:900px }
-    .hero-ctas{ display:flex; gap:12px; margin-top:22px; flex-wrap:wrap }
-    .panel{
-      margin-top:28px; padding:18px; border-radius:var(--radius);
-      outline:1px solid var(--ae-line); background:rgba(255,255,255,.04);
-    }
+  /* ====== Hero ====== */
+.hero{ position:relative; padding:72px 0 40px; overflow:hidden; }
+.hero-bg{
+  position:absolute; inset:-35% -10% -10% -10%; z-index:-1;
+  background:
+    radial-gradient(60% 60% at 18% 30%, rgba(98,243,214,.28), transparent 60%),
+    radial-gradient(70% 70% at 82% 22%, rgba(253,122,116,.28), transparent 60%),
+    radial-gradient(90% 90% at 50% 98%, rgba(120,150,255,.22), transparent 60%);
+  filter: blur(44px) saturate(1.15) brightness(1.05);
+  animation: drift 10s ease-in-out infinite alternate;
+}
+.hero-bg::before,
+.hero-bg::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(50% 45% at 25% 70%, rgba(98,243,214,.22), transparent 60%),
+    radial-gradient(55% 50% at 80% 65%, rgba(253,122,116,.20), transparent 60%);
+  filter: blur(52px);
+  mix-blend-mode: screen;
+  animation: drift2 14s ease-in-out infinite alternate;
+}
+.hero-bg::after{
+  background:
+    radial-gradient(40% 40% at 35% 20%, rgba(120,150,255,.18), transparent 60%),
+    radial-gradient(45% 45% at 70% 80%, rgba(98,243,214,.16), transparent 60%);
+  animation: drift3 16s ease-in-out infinite alternate;
+}
+
+@keyframes drift{
+  0%{ transform: translate3d(0,0,0) scale(1) rotate(0.001deg) }
+  100%{ transform: translate3d(0,-6%,0) scale(1.07) rotate(0.001deg) }
+}
+@keyframes drift2{
+  0%{ transform: translate3d(2%,0,0) scale(1) }
+  100%{ transform: translate3d(-3%,-2%,0) scale(1.06) }
+}
+@keyframes drift3{
+  0%{ transform: translate3d(-2%,1%,0) scale(1) }
+  100%{ transform: translate3d(3%,-3%,0) scale(1.05) }
+}
 
     /* ====== Features ====== */
     .features{ padding:40px 0 24px }
