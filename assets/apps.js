@@ -30,3 +30,13 @@ if(track){
   });
   track.addEventListener('pointerup', ()=> down=false);
 }
+// feature rail
+const track = document.getElementById('featureTrack');
+const by = () => track.firstElementChild.getBoundingClientRect().width + 16; // card + gap
+document.querySelector('.feature-rail .prev')?.addEventListener('click',()=>track.scrollBy({left:-by(), behavior:'smooth'}));
+document.querySelector('.feature-rail .next')?.addEventListener('click',()=>track.scrollBy({left:+by(), behavior:'smooth'}));
+// drag to scroll (nice UX)
+let isDown=false, startX=0, sx=0;
+track.addEventListener('pointerdown',e=>{isDown=true; track.setPointerCapture(e.pointerId); startX=e.clientX; sx=track.scrollLeft;});
+track.addEventListener('pointermove',e=>{ if(!isDown) return; track.scrollLeft = sx + (startX - e.clientX);});
+track.addEventListener('pointerup',()=>{isDown=false;});
