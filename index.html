@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomy Engine — From a sentence to a system</title>
+  <meta name="description" content="Autonomy Engine compiles intent into audited systems — code, tests, CI, CAD, and proofs.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Autonomy Engine">
+        <img src="assets/icons/favicon.svg" width="20" height="20" alt="AE">
+        <span>Autonomy Engine</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#demo">Demo</a>
+        <a class="btn primary" href="#waitlist">Become an Operator</a>
+        <button class="btn ghost" id="toggleTheme" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-ink" aria-hidden="true"></div>
+    <div class="container hero-inner" data-reveal>
+      <p class="eyebrow">From a sentence to a system</p>
+      <h1>Compile intent into working, audited systems — <em>code, tests, CI, CAD</em>, and proofs.</h1>
+      <p class="lede">Calm. Controlled. Powerful. Privacy by design. Transparency by default.</p>
+      <div class="cta">
+        <a class="btn primary" href="#waitlist">Request early access</a>
+        <a class="btn ghost" href="#features">Explore features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="head">
+        <h2>Features</h2>
+        <p class="kicker">Big cards. Custom icons. Drag or let it auto-scroll.</p>
+      </div>
+
+      <div class="carousel" data-interval="4200">
+        <div class="track" id="fTrack">
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Prompt → Business</h3>
+            <p>Compile AESL from natural language; scaffold repos with tests & CI; ship artifacts with receipts.</p>
+            <ul><li>Coverage gates & SBOM</li><li>Reproducible builds</li><li>Provider-agnostic routing</li></ul>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-vial-circle-check"></i></div>
+            <h3>Tests & CI by default</h3>
+            <p>Policy-driven templates; quality bars enforced in CI; provenance preserved end-to-end.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Deploy & Verify</h3>
+            <p>Artifacts + SBOM, rollout plans, smoke tests, rollback hooks — all from the plan.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Observe & Audit</h3>
+            <p>Traces, telemetry, and tamper-evident logs so changes are explainable, defensible, reversible.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-brain"></i></div>
+            <h3>Optimize the Loop</h3>
+            <p>Close the loop: user feedback and evals drive continual improvement in safe sandboxes.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Freelancer OS</h3>
+            <p>Auto-SOW, milestones, deliverable receipts, client portal, and escrow hooks.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-house-chimney"></i></div>
+            <h3>Real Estate OS</h3>
+            <p>Listings, lead pipelines, doc packs, MLS sync, and compliant communications.</p>
+          </article>
+          <article class="card big">
+            <div class="glyph"><i class="fa-solid fa-flask"></i></div>
+            <h3>AE Labs</h3>
+            <p>Experimental modules & proofs — sandboxes, provenance interlocks, public benchmarks.</p>
+          </article>
+        </div>
+        <div class="dots" id="fDots" aria-label="pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT COMES TOGETHER -->
+  <section id="how" class="section">
+    <div class="container">
+      <h2>How it comes together</h2>
+      <p class="kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate.</p>
+
+      <div class="ribbon" id="ribbon">
+        <div class="rTrack" id="rTrack">
+          <div class="chip"><span class="dot"><i class="fa-solid fa-lightbulb"></i></span>Intent</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-diagram-project"></i></span>AESL</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-screwdriver-wrench"></i></span>Scaffold</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-vial"></i></span>Tests</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-gears"></i></span>CI</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-file-shield"></i></span>SBOM</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-rocket"></i></span>Deploy</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-magnifying-glass-chart"></i></span>Audit</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-eye"></i></span>Observe</div>
+          <div class="chip"><span class="dot"><i class="fa-solid fa-chart-line"></i></span>Optimize</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo" class="section">
+    <div class="container">
+      <h2>60-second Demo</h2>
+      <p class="kicker">Drop your YouTube/Loom link when ready. Placeholder below.</p>
+      <div class="video">
+        <div class="video-ph"><i class="fa-solid fa-circle-play"></i>&nbsp;&nbsp;Your demo goes here</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="section">
+    <div class="container">
+      <h2>Early Operator Waitlist</h2>
+      <p class="kicker">Get early access invites, live demos, and the first vertical OS drops.</p>
+
+      <form class="waitlist" method="POST" action="https://formsubmit.co/operator@autonomyengine.net">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New AE Waitlist signup">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <label><span>Name</span><input required name="name" placeholder="Jane Doe"></label>
+        <label><span>Email</span><input required type="email" name="email" placeholder="jane@company.com"></label>
+        <label class="span-2"><span>What are you hoping to build?</span><textarea name="use_case" rows="4" placeholder="2–3 lines on your intended use case"></textarea></label>
+        <button class="btn primary span-2" type="submit"><i class="fa-solid fa-user-plus"></i>&nbsp;Join Waitlist</button>
+        <p class="tiny span-2">We’ll only email when there’s something worth your time.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container foot">
+      <div class="left">
+        <img src="assets/icons/favicon.svg" width="18" height="18" alt="AE">
+        Autonomy Engine Systems LLC
+      </div>
+      <nav class="socials">
+        <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://x.com/autonomy_engine" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:operator@autonomyengine.net" aria-label="Email"><i class="fa-solid fa-at"></i></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
