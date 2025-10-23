@@ -9,9 +9,10 @@
 </head>
 <body>
   <!-- NAV -->
-  <header class="nav" id="top">
-    <a href="#" class="brand">
-      <img src="assets/logo.svg" alt="" class="logo" />
+  <header class="nav">
+    <a class="brand" href="#">
+      <!-- drop your real SVG later; this is a placeholder mark -->
+      <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><rect rx="5" width="24" height="24" fill="#7AB7FF"/><path d="M7 12h6v6" stroke="#0B1520" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
       <span>Autonomy Engine</span>
     </a>
     <nav>
@@ -25,65 +26,71 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" aria-labelledby="h1">
+  <section class="hero" id="top" aria-labelledby="h1">
     <div class="vignette" aria-hidden="true"></div>
     <div class="stack">
+      <p class="kicker">operating system for your api work</p>
       <h1 id="h1" class="headline">AUTONOMY<br>AS SOVEREIGNTY</h1>
-      <p class="sub">calm control over complex software</p>
-      <button class="btn btn-outline" id="seeItWork" aria-haspopup="dialog">See it work</button>
+      <p class="sub"><span class="dot"></span> calm control over complex software</p>
+      <button class="btn btn-outline" id="seeItWork" aria-haspopup="dialog">See it work ▸</button>
     </div>
-    <div class="scroll-cue" aria-hidden="true">▾</div>
+    <div class="baseline" aria-hidden="true"><span>scroll</span></div>
   </section>
 
-  <!-- TRUST STRIP (static logos) -->
+  <!-- INTEGRATIONS STRIP (text chips, no images to break) -->
   <section class="trusted" id="integrations" aria-label="Integrations">
     <p class="trusted-title">Integrates with the tools you already use</p>
-    <ul class="logo-row">
-      <!-- Replace <img> src with your real SVGs. Monochrome by default; color on hover. -->
-      <li><img src="assets/chatgpt.svg" alt="ChatGPT"></li>
-      <li><img src="assets/notion.svg" alt="Notion"></li>
-      <li><img src="assets/stripe.svg" alt="Stripe"></li>
-      <li><img src="assets/powerbi.svg" alt="Power BI"></li>
-      <li><img src="assets/x.svg" alt="X"></li>
-      <li><img src="assets/gmail.svg" alt="Gmail"></li>
-      <li><img src="assets/shopify.svg" alt="Shopify"></li>
-      <li><img src="assets/slack.svg" alt="Slack"></li>
-      <li><img src="assets/github.svg" alt="GitHub"></li>
-      <li><img src="assets/drive.svg" alt="Google Drive"></li>
+    <ul class="chip-row" role="list">
+      <li class="chip chatgpt">ChatGPT</li>
+      <li class="chip notion">Notion</li>
+      <li class="chip stripe">Stripe</li>
+      <li class="chip powerbi">Power BI</li>
+      <li class="chip x">X</li>
+      <li class="chip gmail">Gmail</li>
+      <li class="chip shopify">Shopify</li>
+      <li class="chip slack">Slack</li>
+      <li class="chip github">GitHub</li>
+      <li class="chip drive">Google Drive</li>
     </ul>
   </section>
 
-  <script src="script.js"></script>
-  <!-- INTERACTIVE MODAL -->
-<div class="modal-backdrop" id="demoModal" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
-    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+  <!-- INTERACTIVE DEMO MODAL -->
+  <div id="demoModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close" data-close>✕</button>
 
-    <div class="modal-grid">
-      <!-- Left: intent -->
-      <section class="card input-card">
-        <h3 id="demoTitle">Describe what should happen</h3>
-        <textarea id="aeIntent" rows="4">when a shopify order is paid, create invoice and notify slack #ops</textarea>
-        <div class="controls">
-          <button class="btn btn-outline" id="runBtn">Run</button>
-          <span class="compile-state" id="compileState" aria-live="polite"></span>
+      <div class="modal-grid">
+        <div class="card input-card">
+          <label for="ae-intent" class="card-title">Intent</label>
+          <textarea id="ae-intent" rows="3">when a shopify order is paid, create invoice and notify slack #ops</textarea>
+          <div class="actions">
+            <button id="ae-run" class="btn btn-outline">Run</button>
+            <div id="ae-compile" class="compile hidden">
+              <span>Compiling…</span>
+              <div class="bar"><i></i></div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <!-- Right top: AESL -->
-      <section class="card aesl-card" aria-live="polite">
-        <h4>AESL</h4>
-        <pre id="aeslOut" class="code"></pre>
-      </section>
+        <div class="card aesl-card">
+          <div class="card-title">AESL</div>
+          <pre id="ae-aesl" class="code"></pre>
+        </div>
 
-      <!-- Right bottom: Run log -->
-      <section class="card log-card" aria-live="polite">
-        <h4>Run log</h4>
-        <pre id="logOut" class="code"></pre>
-      </section>
+        <div class="card log-card">
+          <div class="card-title">Run Log</div>
+          <pre id="ae-log" class="code"></pre>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span id="ae-status" class="status"></span>
+        <button id="ae-try-own" class="btn btn-outline hidden">Try your own instruction</button>
+      </div>
     </div>
   </div>
-</div>
 
+  <script src="script.js"></script>
 </body>
 </html>
