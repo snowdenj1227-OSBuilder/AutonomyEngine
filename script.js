@@ -81,3 +81,15 @@ window.handleSignup = function(e){
 
 /* Year */
 document.getElementById('year').textContent = new Date().getFullYear();
+// Lock hero height/width to the ghost content to prevent layout shift
+(function lockHeroSize(){
+  const wrap = document.querySelector('.typewrap');
+  const ghost = wrap?.querySelector('.ghost');
+  if (!wrap || !ghost) return;
+  function sync(){
+    wrap.style.minHeight = ghost.offsetHeight + 'px';
+    wrap.style.minWidth  = ghost.offsetWidth  + 'px';
+  }
+  sync();
+  window.addEventListener('resize', sync);
+})();
