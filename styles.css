@@ -72,6 +72,22 @@ img{max-width:100%; height:auto} a{color:var(--accent); text-decoration:none}
   50%  { filter:hue-rotate(12deg) blur(46px) saturate(130%); }
   100% { filter:hue-rotate(0deg) blur(42px) saturate(120%); }
 }
+.typewrap{ display:grid; justify-content:center }
+.typewrap > #typewriter,
+.typewrap > .ghost{ grid-area:1 / 1; }
+.typewrap > .ghost{
+  visibility:hidden;      /* reserves space but stays invisible */
+  white-space:nowrap;     /* keeps width stable */
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(2rem,6vw,3.4rem);
+  line-height:1.2;
+  margin:0 auto .6rem;
+  max-width:900px;
+  text-align:center;
+}
 
 /* ---------- Sections ---------- */
 section{max-width:1200px; margin:0 auto; padding:3rem 1rem}
