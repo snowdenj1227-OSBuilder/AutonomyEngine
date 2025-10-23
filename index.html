@@ -36,15 +36,17 @@
     <!-- HERO -->
     <section class="hero" id="top" aria-label="Intro">
       <div class="aurora" aria-hidden="true"></div>
-      <h1 class="hero-title typewrap">
-        <span id="typewriter"
-          data-phrases='[
-            "Where autonomy feels effortless.",
-            "The calm inside complex systems.",
-            "Automation with intention.",
-            "Because control should feel quiet."
-          ]'>Where autonomy feels effortless.</span>
-      </h1>
+<h1 class="hero-title typecycler">
+  <!-- Ghost defines the fixed box using the longest phrase -->
+  <span class="ghost">Because control should feel quiet.</span>
+
+  <!-- Stacked phrases (same width, absolutely positioned) -->
+  <span class="phrase">Where autonomy feels effortless.</span>
+  <span class="phrase">The calm inside complex systems.</span>
+  <span class="phrase">Because control should feel quiet.</span>
+  <span class="phrase">Automation with intention.</span>
+</h1>
+
         <!-- Ghost sets the final width/height so no jitter -->
   <span class="ghost">The calm inside complex systems.</span>
 </h1>
