@@ -71,14 +71,24 @@ img{max-width:100%; height:auto} a{color:var(--accent); text-decoration:none}
   0%   { filter:hue-rotate(0deg) blur(42px) saturate(120%); }
   50%  { filter:hue-rotate(12deg) blur(46px) saturate(130%); }
   100% { filter:hue-rotate(0deg) blur(42px) saturate(120%); }
+/* anti-jump wrapper */
+.typewrap{
+  display:grid;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
+  text-align:center;
 }
-.typewrap{ display:grid; justify-content:center }
 .typewrap > #typewriter,
 .typewrap > .ghost{ grid-area:1 / 1; }
 .typewrap > .ghost{
-  visibility:hidden;      /* reserves space but stays invisible */
-  white-space:nowrap;     /* keeps width stable */
+  visibility:hidden;   /* reserves space */
+  white-space:nowrap;  /* lock width to one line (desktop) */
 }
+@media (max-width:520px){
+  .typewrap > .ghost{ white-space:normal; } /* allow wrap on phones */
+}
+
 .hero-title{
   font-family:var(--font-display);
   font-weight:600;
