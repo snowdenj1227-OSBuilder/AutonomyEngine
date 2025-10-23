@@ -1,123 +1,100 @@
-// Keep nav background solid after first scroll
+// Nav background solid after tiny scroll
 const nav = document.querySelector('.nav');
 const solid = () => nav.style.background = 'rgba(16,17,19,.9)';
 const glass = () => nav.style.background = 'linear-gradient(to bottom, rgba(16,17,19,.6), rgba(16,17,19,0))';
 let scrolled = false;
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 8 && !scrolled){ solid(); scrolled = true; }
-  else if (window.scrollY <= 8 && scrolled){ glass(); scrolled = false; }
+  if (window.scrollY > 1 && !scrolled){ solid(); scrolled = true; }
+  else if (window.scrollY <= 1 && scrolled){ glass(); scrolled = false; }
 });
 
-// Placeholder for modal open (we wire the interactive demo next)
-document.getElementById('seeItWork')?.addEventListener('click', () => {
-  // TODO: open modal
-  console.log('Open interactive modal');
-});
+// ===== Interactive Demo Modal =====
 const modal = document.getElementById('demoModal');
-const seeBtn = document.getElementById('seeItWork');
-const closeBtn = document.getElementById('modalClose');
+const openBtn = document.getElementById('seeItWork');
+const closeEls = modal.querySelectorAll('[data-close]');
+const intentEl = document.getElementById('ae-intent');
+const runBtn = document.getElementById('ae-run');
+const compileRow = document.getElementById('ae-compile');
+const aeslOut = document.getElementById('ae-aesl');
+const logOut = document.getElementById('ae-log');
+const statusEl = document.getElementById('ae-status');
+const tryOwnBtn = document.getElementById('ae-try-own');
+
+let autoplayTimer = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // force hidden on load
+  modal.setAttribute('aria-hidden','true');
+});
 
 function openModal(){
-  modal.hidden = false;
+  modal.setAttribute('aria-hidden','false');
   document.body.style.overflow = 'hidden';
-  autoplayDemo(); // kick off the 8–10s preview
+  resetDemo();
+  autoplayTimer = setTimeout(()=> runDemo(intentEl.value, true), 1200);
 }
 function closeModal(){
-  modal.hidden = true;
+  modal.setAttribute('aria-hidden','true');
   document.body.style.overflow = '';
-  resetDemo(true);
+  clearTimeout(autoplayTimer);
+}
+openBtn?.addEventListener('click', openModal);
+closeEls.forEach(el => el.addEventListener('click', closeModal));
+window.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+function resetDemo(){
+  aeslOut.textContent = ''; logOut.textContent = ''; statusEl.textContent = '';
+  tryOwnBtn.classList.add('hidden'); compileRow.classList.add('hidden');
+  intentEl.disabled = false; runBtn.disabled = false;
 }
 
-seeBtn?.addEventListener('click', openModal);
-closeBtn?.addEventListener('click', closeModal);
-modal?.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-window.addEventListener('keydown', (e)=>{ if(!modal.hidden && e.key === 'Escape') closeModal(); });
-const intentEl = document.getElementById('aeIntent');
-const aeslOut = document.getElementById('aeslOut');
-const logOut  = document.getElementById('logOut');
-const runBtn  = document.getElementById('runBtn');
-const compileState = document.getElementById('compileState');
-
-let timers = [];
-function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
-function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
-
-function resetDemo(clearInput=false){
-  clearTimers();
-  compileState.textContent = '';
-  aeslOut.textContent = '';
-  logOut.textContent = '';
-  if(clearInput) intentEl.value = 'when a shopify order is paid, create invoice and notify slack #ops';
-  intentEl.disabled = false;
-  runBtn.disabled = false;
-}
-function toAESL(text){
-  const t = text.toLowerCase();
+function toAESL(s){
+  const txt = s.toLowerCase();
+  const has = (k) => txt.includes(k);
   const steps = [];
-  let trigger = 'manual.trigger()';
+  if (has('invoice') || has('stripe')) steps.push('stripe.create_invoice()');
+  if (has('slack') || has('#'))      steps.push('slack.post("ops","invoice ready")');
+  if (has('email') || has('gmail'))  steps.push('gmail.send("ops@example.com","notice")');
+  if (has('power bi') || has('dataset')) steps.push('powerbi.refresh_dataset()');
 
-  if(t.includes('shopify') && (t.includes('paid') || t.includes('order paid'))) trigger = 'shopify.order_paid';
-  if(t.includes('stripe') && (t.includes('invoice') || t.includes('create invoice'))) steps.push('stripe.create_invoice()');
-  if(t.includes('slack')) steps.push(`slack.post("ops","invoice ready")`);
-  if(t.includes('gmail') || t.includes('email')) steps.push('gmail.send("ops@example.com","notification")');
-  if(steps.length === 0) steps.push('noop()');
+  const trigger =
+    (has('shopify') && has('paid')) ? 'shopify.order_paid' :
+    (has('github') && has('push'))  ? 'github.push' : 'manual';
 
-  return `workflow "run" {\n  trigger: ${trigger}\n  steps: [\n    ${steps.join(',\n    ')}\n  ]\n}`;
+  return `workflow "ae_demo" {
+  trigger: ${trigger}
+  steps: [
+    ${steps.join(',\n    ')}
+  ]
+}`;
 }
-function log(lines, start=0, gap=600){
-  lines.forEach((ln, i)=> at(start + i*gap, ()=> {
-    logOut.textContent += (logOut.textContent ? '\n' : '') + ln;
-    logOut.scrollTop = logOut.scrollHeight;
-  }));
+
+function logLine(t){ logOut.textContent += t + '\n'; }
+function wait(ms){ return new Promise(r=>setTimeout(r,ms)); }
+function typeInto(el, text, step=10){
+  el.textContent=''; let i=0;
+  const tick=()=>{ el.textContent=text.slice(0,i); i+=step; if(i<=text.length) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
 }
-function autoplayDemo(){
-  resetDemo(false);
-  intentEl.disabled = true;
-  runBtn.disabled = true;
 
-  const text = intentEl.value;
-  at(300, ()=> compileState.textContent = 'Compiling…');
-  const aesl = toAESL(text);
-
-  // print AESL lines with rhythm
-  const lines = aesl.split('\n');
-  lines.forEach((ln, i)=> at(1200 + i*120, ()=> {
-    aeslOut.textContent += (i?'\n':'') + ln;
-  }));
-
-  // run log
-  log(['▶ compiling AESL'], 900, 1);
-  log(['✔ stripe.create_invoice()', '✔ slack.post()', '✔ ledger.append(record)'], 2200, 700);
-  at(4500, ()=> {
-    log(['⚙ human_approval: not_required'], 0, 1);
-    compileState.textContent = 'Completed';
-    // hand off to interactive mode
-    at(800, ()=> { intentEl.disabled = false; runBtn.disabled = false; compileState.textContent = 'Try your own instruction'; });
-  });
+async function runDemo(src){
+  clearTimeout(autoplayTimer);
+  intentEl.disabled = true; runBtn.disabled = true;
+  compileRow.classList.remove('hidden'); aeslOut.textContent=''; logOut.textContent=''; statusEl.textContent='';
+  await wait(900);
+  const aesl = toAESL(src);
+  compileRow.classList.add('hidden');
+  typeInto(aeslOut, aesl, 12);
+  await wait(900);
+  logLine('▶ compiling AESL'); await wait(600);
+  if(aesl.includes('create_invoice')){ logLine('✔ stripe.create_invoice()'); await wait(600); }
+  if(aesl.includes('slack.post'))     { logLine('✔ slack.post()'); await wait(600); }
+  if(aesl.includes('gmail.send'))     { logLine('✔ gmail.send()'); await wait(500); }
+  logLine('✔ ledger.append(record)'); await wait(500);
+  logLine('⚙ human_approval: not_required');
+  statusEl.textContent='workflow completed';
+  tryOwnBtn.classList.remove('hidden');
 }
-runBtn?.addEventListener('click', ()=>{
-  clearTimers();
-  compileState.textContent = 'Compiling…';
-  aeslOut.textContent = '';
-  logOut.textContent = '';
-
-  const aesl = toAESL(intentEl.value);
-  aesl.split('\n').forEach((ln, i)=> at(200 + i*80, ()=> {
-    aeslOut.textContent += (i?'\n':'') + ln;
-  }));
-
-  log(['▶ compiling AESL'], 200, 1);
-  // naive step detection
-  const hasStripe = /stripe\.create_invoice/.test(aesl);
-  const hasSlack  = /slack\.post/.test(aesl);
-  const steps = [
-    hasStripe && '✔ stripe.create_invoice()',
-    hasSlack  && '✔ slack.post()',
-    '✔ ledger.append(record)'
-  ].filter(Boolean);
-  log(steps, 900, 650);
-
-  at(900 + steps.length*650 + 300, ()=> {
-    compileState.textContent = 'Completed';
-  });
-});
+runBtn.addEventListener('click', ()=> runDemo(intentEl.value));
+intentEl.addEventListener('input', ()=> clearTimeout(autoplayTimer));
+tryOwnBtn.addEventListener('click', ()=> { resetDemo(); intentEl.focus(); });
