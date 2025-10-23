@@ -38,19 +38,40 @@ img{max-width:100%; height:auto} a{color:var(--accent); text-decoration:none}
 .theme-toggle{background:transparent; color:var(--fg); border:1px solid var(--line); padding:.5rem .6rem; border-radius:.6rem}
 
 /* ---------- Hero ---------- */
-.hero{position:relative; overflow:hidden; padding:7rem 1rem 4rem}
-.hero .aurora{
-  position:absolute; inset:-20% -10% 0 -10%; pointer-events:none; filter:blur(30px);
-  background:
-    radial-gradient(60% 80% at 20% 10%, color-mix(in srgb,var(--accent) 45%, transparent) 0%, transparent 60%),
-    radial-gradient(50% 60% at 80% 30%, color-mix(in srgb,var(--accent2) 45%, transparent) 0%, transparent 60%),
-    radial-gradient(50% 60% at 50% 90%, color-mix(in srgb,#6ad2ff 35%, transparent) 0%, transparent 65%);
-  animation: drift 24s linear infinite alternate;
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:8rem 1rem 5rem;   /* give it space to breathe */
 }
-@keyframes drift{0%{transform:translateY(-4%) scale(1)}100%{transform:translateY(4%) scale(1.05)}}
-.hero-title{font-family:var(--font-display); font-weight:600; font-size:clamp(2rem,6vw,3.4rem); text-align:center; margin:0 auto .6rem; max-width:900px}
-.hero-sub{text-align:center; color:var(--muted); margin:0 auto 1.2rem; max-width:800px}
-.hero-cta{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap}
+
+.hero .aurora{
+  position:absolute;
+  inset:-30% -20% -30% -20%;
+  pointer-events:none;
+  filter:blur(42px) saturate(120%);
+  /* Layered subtle “light sources” */
+  background:
+    radial-gradient(60% 70% at 15% 20%, color-mix(in srgb, var(--accent) 55%, transparent) 0%, transparent 60%),
+    radial-gradient(50% 65% at 85% 30%, color-mix(in srgb, var(--accent2) 55%, transparent) 0%, transparent 60%),
+    radial-gradient(55% 70% at 50% 85%, color-mix(in srgb, #6ad2ff 45%, transparent) 0%, transparent 65%);
+  animation:
+    aurora-drift 26s ease-in-out infinite alternate,
+    aurora-hue  40s linear       infinite;
+  z-index:0;
+}
+
+@keyframes aurora-drift{
+  0%   { transform:translate3d(-2%, -3%, 0) scale(1.02) rotate(0.5deg); }
+  50%  { transform:translate3d( 2%,  3%, 0) scale(1.06) rotate(-0.5deg); }
+  100% { transform:translate3d(-1%,  2%, 0) scale(1.04) rotate(0.2deg); }
+}
+
+/* This gives a gentle color breathing without neon madness */
+@keyframes aurora-hue{
+  0%   { filter:hue-rotate(0deg) blur(42px) saturate(120%); }
+  50%  { filter:hue-rotate(12deg) blur(46px) saturate(130%); }
+  100% { filter:hue-rotate(0deg) blur(42px) saturate(120%); }
+}
 
 /* ---------- Sections ---------- */
 section{max-width:1200px; margin:0 auto; padding:3rem 1rem}
