@@ -98,6 +98,80 @@ img{max-width:100%; height:auto} a{color:var(--accent); text-decoration:none}
   max-width:900px;
   text-align:center;
 }
+/* --- No-reflow typewriter cycler --- */
+.typecycler{
+  position:relative;
+  display:block;
+  margin:0 auto .6rem;
+  text-align:center;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(2rem,6vw,3.4rem);
+  line-height:1.2;
+}
+
+/* The ghost sets a fixed box so nothing moves */
+.typecycler .ghost{
+  visibility:hidden;
+  white-space:nowrap;
+  display:block;        /* defines the box height */
+}
+
+/* Each phrase is absolutely stacked in the same box */
+.typecycler .phrase{
+  position:absolute;
+  inset:0;              /* fill the ghost's box */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  opacity:0;
+  
+  /* Fake type: reveal left->right via mask; add a caret */
+  -webkit-mask: linear-gradient(to right, #000 0  , #000 0) no-repeat;
+          mask: linear-gradient(to right, #000 0  , #000 0) no-repeat;
+  -webkit-mask-size: 0% 100%;
+          mask-size: 0% 100%;
+}
+
+/* Blink caret */
+.typecycler .phrase::after{
+  content:"";
+  width:0.06em;
+  height:1em;
+  background: currentColor;
+  margin-left:0.15em;
+  align-self:flex-end;
+  opacity:0;
+}
+
+/* Timeline: each phrase gets 4s (2.6s reveal + 1.4s hold/fade) */
+@keyframes reveal {
+  0%   { opacity:1; -webkit-mask-size:0% 100%;   mask-size:0% 100%; }
+  65%  { opacity:1; -webkit-mask-size:100% 100%; mask-size:100% 100%; }
+  85%  { opacity:1; }
+  100% { opacity:0; }
+}
+@keyframes caret {
+  0%,49%   { opacity:1; }
+  50%,100% { opacity:0; }
+}
+
+/* Stagger the phrases so they cycle without reflow */
+.typecycler .phrase:nth-of-type(2){ animation:reveal 4s ease-in-out 0s    infinite; }
+.typecycler .phrase:nth-of-type(3){ animation:reveal 4s ease-in-out 4s    infinite; }
+.typecycler .phrase:nth-of-type(4){ animation:reveal 4s ease-in-out 8s    infinite; }
+.typecycler .phrase:nth-of-type(5){ animation:reveal 4s ease-in-out 12s   infinite; }
+
+.typecycler .phrase:nth-of-type(n+2)::after{
+  animation: caret .9s steps(1,end) infinite;
+}
+
+/* Mobile: allow wrapping but still no reflow because box is fixed by .ghost */
+@media (max-width:520px){
+  .typecycler .ghost { white-space:normal; }
+  .typecycler .phrase{ white-space:normal; padding:0 .2rem; }
+}
 
 /* ---------- Sections ---------- */
 section{max-width:1200px; margin:0 auto; padding:3rem 1rem}
