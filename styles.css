@@ -40,7 +40,7 @@ body{margin:0;background:var(--base);color:var(--ink);font:400 16px/1.6 var(--bo
 .headline{
   margin:0; line-height:1.08; letter-spacing:-.015em;
   font-family:var(--headline); font-weight:900; font-size:clamp(2.2rem,6vw,4.8rem);
-  text-shadow:0 2px 0 rgba(0,0,0,.5), var(--shadow);
+  text-shadow:0 2px 0 rgba(0,0,0,.8), var(--shadow);
 }
 .sub{margin:.5rem 0 1.3rem; color:var(--muted)}
 .scroll-cue{
@@ -74,7 +74,7 @@ body{margin:0;background:var(--base);color:var(--ink);font:400 16px/1.6 var(--bo
   position:absolute; inset:0;
   pointer-events:none; z-index:0; /* text stays above */
   background:
-    radial-gradient(900px 480px at 50% 38%, rgba(255,255,255,.035), transparent 60%),
+    radial-gradient(900px 480px at 50% 38%, rgba(255,255,255,.05), transparent 60%),
     url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'>\
 <filter id='n'><feTurbulence baseFrequency='0.8' numOctaves='2' type='fractalNoise'/></filter>\
