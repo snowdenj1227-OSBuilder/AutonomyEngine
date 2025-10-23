@@ -1,179 +1,242 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="theme-dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Autonomy Engine — From a sentence to a system</title>
-  <meta name="description" content="Autonomy Engine compiles intent into audited systems — code, tests, CI, CAD, and proofs.">
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 CDN -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autonomy Engine — Where autonomy feels effortless</title>
+  <meta name="description" content="Ethical, auditable automation. 90% autonomous with 10% human approval. Calm, compliant, and reproducible.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="color-scheme" content="dark light">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Primary">
       <a class="brand" href="#top" aria-label="Autonomy Engine">
-        <img src="assets/icons/favicon.svg" width="20" height="20" alt="AE">
-        <span>Autonomy Engine</span>
+        <!-- LOGO SLOT -->
+        <img src="assets/logo.svg" alt="" class="logo" />
+        <span class="brand-text">Autonomy&nbsp;Engine</span>
       </a>
-      <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-        <a href="#demo">Demo</a>
-        <a class="btn primary" href="#waitlist">Become an Operator</a>
-        <button class="btn ghost" id="toggleTheme" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
-      </nav>
-    </div>
+      <button class="nav-toggle" aria-controls="menu" aria-expanded="false">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Try it</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+        <li><a href="#trust">Trust</a></li>
+        <li><a href="#waitlist" class="btn btn-small">Request access</a></li>
+        <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◑</button></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-ink" aria-hidden="true"></div>
-    <div class="container hero-inner" data-reveal>
-      <p class="eyebrow">From a sentence to a system</p>
-      <h1>Compile intent into working, audited systems — <em>code, tests, CI, CAD</em>, and proofs.</h1>
-      <p class="lede">Calm. Controlled. Powerful. Privacy by design. Transparency by default.</p>
-      <div class="cta">
-        <a class="btn primary" href="#waitlist">Request early access</a>
-        <a class="btn ghost" href="#features">Explore features</a>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-label="Intro">
+      <div class="aurora" aria-hidden="true"></div>
+      <h1 class="hero-title">
+        <span id="typewriter"
+          data-phrases='[
+            "Where autonomy feels effortless.",
+            "The calm inside complex systems.",
+            "Automation with intention.",
+            "Because control should feel quiet."
+          ]'>Where autonomy feels effortless.</span>
+      </h1>
+      <p class="hero-sub">90% autonomous. 10% human approval. Every decision auditable.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#demo">See it in action</a>
+        <a class="btn btn-ghost" href="#features">Explore features</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FEATURES -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="head">
-        <h2>Features</h2>
-        <p class="kicker">Big cards. Custom icons. Drag or let it auto-scroll.</p>
+    <!-- 60-SECOND OVERVIEW -->
+    <section class="overview" id="overview" aria-label="Overview">
+      <h2>60-second overview</h2>
+      <div class="diagram" role="img" aria-label="Intent to Outcome flow with oversight and ledger">
+        <div class="node">Intent</div>
+        <div class="pipe"></div>
+        <div class="node">Engine</div>
+        <div class="pipe"></div>
+        <div class="node">Oversight</div>
+        <div class="pipe"></div>
+        <div class="node">Ledger</div>
+        <div class="pipe"></div>
+        <div class="node">Outcome</div>
       </div>
+      <p class="muted center">Describe intent → compiled workflow → autonomous run within guardrails → auditable outcome.</p>
+    </section>
 
-      <div class="carousel" data-interval="4200">
-        <div class="track" id="fTrack">
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-briefcase"></i></div>
-            <h3>Prompt → Business</h3>
-            <p>Compile AESL from natural language; scaffold repos with tests & CI; ship artifacts with receipts.</p>
-            <ul><li>Coverage gates & SBOM</li><li>Reproducible builds</li><li>Provider-agnostic routing</li></ul>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-vial-circle-check"></i></div>
-            <h3>Tests & CI by default</h3>
-            <p>Policy-driven templates; quality bars enforced in CI; provenance preserved end-to-end.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-rocket"></i></div>
-            <h3>Deploy & Verify</h3>
-            <p>Artifacts + SBOM, rollout plans, smoke tests, rollback hooks — all from the plan.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Observe & Audit</h3>
-            <p>Traces, telemetry, and tamper-evident logs so changes are explainable, defensible, reversible.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-brain"></i></div>
-            <h3>Optimize the Loop</h3>
-            <p>Close the loop: user feedback and evals drive continual improvement in safe sandboxes.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-user-tie"></i></div>
-            <h3>Freelancer OS</h3>
-            <p>Auto-SOW, milestones, deliverable receipts, client portal, and escrow hooks.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-house-chimney"></i></div>
-            <h3>Real Estate OS</h3>
-            <p>Listings, lead pipelines, doc packs, MLS sync, and compliant communications.</p>
-          </article>
-          <article class="card big">
-            <div class="glyph"><i class="fa-solid fa-flask"></i></div>
-            <h3>AE Labs</h3>
-            <p>Experimental modules & proofs — sandboxes, provenance interlocks, public benchmarks.</p>
-          </article>
-        </div>
-        <div class="dots" id="fDots" aria-label="pagination"></div>
+    <!-- FEATURES -->
+    <section class="features" id="features" aria-label="Features">
+      <h2>Features</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>Immutable Audit Ledger</h3>
+          <p>Append-only, hash-chained records for every action and rationale. Proof, not promises.</p>
+        </article>
+        <article class="card">
+          <div class="icon">👤</div>
+          <h3>Human-in-Loop Oversight</h3>
+          <p>90% autonomy with 10% approvals for low-confidence or sensitive steps.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⌨️</div>
+          <h3>AESL Compiler</h3>
+          <p>Describe intent in plain language; get reproducible, versioned workflows.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🏗️</div>
+          <h3>Vertical Blueprints</h3>
+          <p>Healthcare, real estate, finance, and more—ready-to-run, compliant patterns.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔐</div>
+          <h3>Roles & Residency</h3>
+          <p>Role-based access, least-privilege tokens, and regional data residency options.</p>
+        </article>
+        <article class="card">
+          <div class="icon">♻️</div>
+          <h3>Reproducible Runs</h3>
+          <p>Deterministic workflow snapshots make audits and rollbacks painless.</p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW IT COMES TOGETHER -->
-  <section id="how" class="section">
-    <div class="container">
-      <h2>How it comes together</h2>
-      <p class="kicker">Intent → AESL → scaffold → tests → CI → deploy → audit → observe → iterate.</p>
-
-      <div class="ribbon" id="ribbon">
-        <div class="rTrack" id="rTrack">
-          <div class="chip"><span class="dot"><i class="fa-solid fa-lightbulb"></i></span>Intent</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-diagram-project"></i></span>AESL</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-screwdriver-wrench"></i></span>Scaffold</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-vial"></i></span>Tests</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-gears"></i></span>CI</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-file-shield"></i></span>SBOM</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-rocket"></i></span>Deploy</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-magnifying-glass-chart"></i></span>Audit</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-eye"></i></span>Observe</div>
-          <div class="chip"><span class="dot"><i class="fa-solid fa-chart-line"></i></span>Optimize</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEMO -->
-  <section id="demo" class="section">
-    <div class="container">
-      <h2>60-second Demo</h2>
-      <p class="kicker">Drop your YouTube/Loom link when ready. Placeholder below.</p>
-      <div class="video">
-        <div class="video-ph"><i class="fa-solid fa-circle-play"></i>&nbsp;&nbsp;Your demo goes here</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WAITLIST -->
-  <section id="waitlist" class="section">
-    <div class="container">
-      <h2>Early Operator Waitlist</h2>
-      <p class="kicker">Get early access invites, live demos, and the first vertical OS drops.</p>
-
-      <form class="waitlist" method="POST" action="https://formsubmit.co/operator@autonomyengine.net">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New AE Waitlist signup">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none">
-        <label><span>Name</span><input required name="name" placeholder="Jane Doe"></label>
-        <label><span>Email</span><input required type="email" name="email" placeholder="jane@company.com"></label>
-        <label class="span-2"><span>What are you hoping to build?</span><textarea name="use_case" rows="4" placeholder="2–3 lines on your intended use case"></textarea></label>
-        <button class="btn primary span-2" type="submit"><i class="fa-solid fa-user-plus"></i>&nbsp;Join Waitlist</button>
-        <p class="tiny span-2">We’ll only email when there’s something worth your time.</p>
+    <!-- INTERACTIVE MINI-DEMO -->
+    <section class="demo" id="demo" aria-label="Interactive demo">
+      <h2>Try it out</h2>
+      <p class="muted center">Type an instruction. We’ll preview the AESL your intent compiles into.</p>
+      <form class="demo-form" onsubmit="return false;">
+        <label for="intent" class="visually-hidden">Instruction</label>
+        <input id="intent" type="text" placeholder="e.g., Generate invoice from latest order and notify Slack" autocomplete="off" />
       </form>
-    </div>
-  </section>
+      <pre class="code" id="aeskPreview" aria-live="polite"></pre>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container foot">
-      <div class="left">
-        <img src="assets/icons/favicon.svg" width="18" height="18" alt="AE">
-        Autonomy Engine Systems LLC
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how" aria-label="How it works">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Describe</strong> what you need</li>
+        <li><strong>Engine compiles</strong> your workflow</li>
+        <li><strong>Autonomy executes</strong> within guardrails</li>
+        <li><strong>You approve &amp; audit</strong> — effortlessly</li>
+      </ol>
+    </section>
+
+    <!-- INTEGRATIONS CAROUSEL -->
+    <section class="integrations" id="integrations" aria-label="Integrations">
+      <h2>Integrations</h2>
+      <div class="strip" role="list">
+        <!-- 50 placeholders; replace titles with real SVGs as needed -->
+        <span role="listitem" title="X">X</span>
+        <span role="listitem" title="Shopify">Shopify</span>
+        <span role="listitem" title="Etsy">Etsy</span>
+        <span role="listitem" title="GitHub">GitHub</span>
+        <span role="listitem" title="Power BI">Power&nbsp;BI</span>
+        <span role="listitem" title="Notion">Notion</span>
+        <span role="listitem" title="Salesforce">Salesforce</span>
+        <span role="listitem" title="Slack">Slack</span>
+        <span role="listitem" title="Google Drive">Drive</span>
+        <span role="listitem" title="Gmail">Gmail</span>
+        <span role="listitem" title="Calendar">Calendar</span>
+        <span role="listitem" title="Airtable">Airtable</span>
+        <span role="listitem" title="Twilio">Twilio</span>
+        <span role="listitem" title="Stripe">Stripe</span>
+        <span role="listitem" title="Zoom">Zoom</span>
+        <span role="listitem" title="Zendesk">Zendesk</span>
+        <span role="listitem" title="Jira">Jira</span>
+        <span role="listitem" title="Linear">Linear</span>
+        <span role="listitem" title="DocuSign">DocuSign</span>
+        <span role="listitem" title="Office 365">Office&nbsp;365</span>
+        <span role="listitem" title="HubSpot">HubSpot</span>
+        <span role="listitem" title="Webflow">Webflow</span>
+        <span role="listitem" title="Typeform">Typeform</span>
+        <span role="listitem" title="ClickUp">ClickUp</span>
+        <span role="listitem" title="Trello">Trello</span>
+        <span role="listitem" title="Asana">Asana</span>
+        <span role="listitem" title="Monday">monday</span>
+        <span role="listitem" title="Dropbox">Dropbox</span>
+        <span role="listitem" title="OneDrive">OneDrive</span>
+        <span role="listitem" title="Plaid">Plaid</span>
+        <span role="listitem" title="QuickBooks">QuickBooks</span>
+        <span role="listitem" title="FreshBooks">FreshBooks</span>
+        <span role="listitem" title="NetSuite">NetSuite</span>
+        <span role="listitem" title="SAP">SAP</span>
+        <span role="listitem" title="ServiceNow">ServiceNow</span>
+        <span role="listitem" title="Snowflake">Snowflake</span>
+        <span role="listitem" title="BigQuery">BigQuery</span>
+        <span role="listitem" title="Redshift">Redshift</span>
+        <span role="listitem" title="S3">S3</span>
+        <span role="listitem" title="Kubernetes">K8s</span>
+        <span role="listitem" title="Datadog">Datadog</span>
+        <span role="listitem" title="PagerDuty">PagerDuty</span>
+        <span role="listitem" title="Zendesk Sell">Sell</span>
+        <span role="listitem" title="Intercom">Intercom</span>
+        <span role="listitem" title="Calendly">Calendly</span>
+        <span role="listitem" title="Mailchimp">Mailchimp</span>
+        <span role="listitem" title="Segment">Segment</span>
+        <span role="listitem" title="GA4">GA4</span>
+        <span role="listitem" title="Mixpanel">Mixpanel</span>
+        <span role="listitem" title="Power Automate">Power&nbsp;Automate</span>
       </div>
-      <nav class="socials">
-        <a href="https://www.linkedin.com/in/autonomy-engine-systems-llc-76090538b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://x.com/autonomy_engine" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://github.com/snowdenj1227-OSBuilder" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:operator@autonomyengine.net" aria-label="Email"><i class="fa-solid fa-at"></i></a>
-      </nav>
-    </div>
+    </section>
+
+    <!-- TRUST & COMPLIANCE -->
+    <section class="trust" id="trust" aria-label="Trust and compliance">
+      <h2>Built for compliance</h2>
+      <details class="accordion">
+        <summary>See controls</summary>
+        <ul class="checks">
+          <li>Immutable audit ledger</li>
+          <li>Human approvals on low-confidence steps</li>
+          <li>Role-based access &amp; least-privilege tokens</li>
+          <li>Data residency options</li>
+          <li>PII minimization &amp; redaction</li>
+          <li>Reproducible runs &amp; exports</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="quotes" aria-label="Testimonials">
+      <figure>
+        <blockquote>“It automates without losing control. That combination is rare.”</blockquote>
+        <figcaption>— Director of Operations, Healthcare</figcaption>
+      </figure>
+      <figure>
+        <blockquote>“Our agents got back hours per week without risking compliance.”</blockquote>
+        <figcaption>— Managing Broker, Real Estate</figcaption>
+      </figure>
+    </section>
+
+    <!-- VISION -->
+    <section class="vision" aria-label="Vision">
+      <h2>Where it’s going</h2>
+      <p>We’re building the <strong>HTML of autonomy</strong> — a universal language for ethical, auditable automation.</p>
+    </section>
+
+    <!-- WAITLIST -->
+    <section class="waitlist" id="waitlist" aria-label="Early operator waitlist">
+      <h2>Join the Early Operators</h2>
+      <p class="muted center">Be among the first to shape Autonomy Engine.</p>
+      <form class="inline" onsubmit="return window.handleSignup(event)">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@company.com" required autocomplete="email">
+        <button class="btn" type="submit">Request access</button>
+      </form>
+      <p class="tiny center">We don’t sell data. Ever.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Autonomy Engine</p>
   </footer>
 
-  <script src="assets/js/app.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
