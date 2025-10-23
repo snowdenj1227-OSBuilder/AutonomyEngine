@@ -54,5 +54,36 @@
   </section>
 
   <script src="script.js"></script>
+  <!-- INTERACTIVE MODAL -->
+<div class="modal-backdrop" id="demoModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <div class="modal-grid">
+      <!-- Left: intent -->
+      <section class="card input-card">
+        <h3 id="demoTitle">Describe what should happen</h3>
+        <textarea id="aeIntent" rows="4">when a shopify order is paid, create invoice and notify slack #ops</textarea>
+        <div class="controls">
+          <button class="btn btn-outline" id="runBtn">Run</button>
+          <span class="compile-state" id="compileState" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <!-- Right top: AESL -->
+      <section class="card aesl-card" aria-live="polite">
+        <h4>AESL</h4>
+        <pre id="aeslOut" class="code"></pre>
+      </section>
+
+      <!-- Right bottom: Run log -->
+      <section class="card log-card" aria-live="polite">
+        <h4>Run log</h4>
+        <pre id="logOut" class="code"></pre>
+      </section>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
