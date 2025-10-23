@@ -1,89 +1,58 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autonomy Engine — Hero</title>
-  <!-- Fonts: Roboto Condensed (headings), Roboto (body) -->
+  <title>Autonomy Engine</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <section class="hero">
+  <!-- NAV -->
+  <header class="nav" id="top">
+    <a href="#" class="brand">
+      <img src="assets/logo.svg" alt="" class="logo" />
+      <span>Autonomy Engine</span>
+    </a>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#features">Features</a>
+      <a href="#try">Try it</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#trust">Trust</a>
+      <a href="#waitlist" class="btn btn-outline">Request access</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
     <div class="vignette" aria-hidden="true"></div>
-
-    <!-- Orbit field: free-floating logos -->
-    <div class="orbit" aria-hidden="true">
-      <!-- Use data-title + data-line1 + data-line2 for tooltips -->
-      <!-- Replace the inline SVGs with your real brand SVGs in /assets later. -->
-      <button class="logo l1" data-title="ChatGPT" data-line1="assist drafting" data-line2="transform text" aria-label="ChatGPT — assist drafting; transform text">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><circle cx='32' cy='32' r='30' fill='%2300A67E'/><text x='50%' y='58%' text-anchor='middle' font-size='28' font-family='Arial' fill='white'>G</text></svg>">
-      </button>
-
-      <button class="logo l2" data-title="Notion" data-line1="create pages" data-line2="update databases" aria-label="Notion — create pages; update databases">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect x='4' y='4' width='56' height='56' rx='10' fill='white' stroke='black' stroke-width='4'/><text x='50%' y='58%' text-anchor='middle' font-size='28' font-family='Arial' fill='black'>N</text></svg>">
-      </button>
-
-      <button class="logo l3" data-title="Stripe" data-line1="process payments" data-line2="reconcile invoices" aria-label="Stripe — process payments; reconcile invoices">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='%23635BFF'/><text x='50%' y='58%' text-anchor='middle' font-size='26' font-family='Arial' fill='white'>S</text></svg>">
-      </button>
-
-      <button class="logo l4" data-title="Power BI" data-line1="refresh datasets" data-line2="export reports" aria-label="Power BI — refresh datasets; export reports">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='%23F2C811'/><text x='50%' y='58%' text-anchor='middle' font-size='22' font-family='Arial' fill='black'>BI</text></svg>">
-      </button>
-
-      <button class="logo l5" data-title="X (Twitter)" data-line1="post updates" data-line2="fetch mentions" aria-label="X — post updates; fetch mentions">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='black'/><text x='50%' y='58%' text-anchor='middle' font-size='26' font-family='Arial' fill='white'>X</text></svg>">
-      </button>
-
-      <button class="logo l6" data-title="Gmail" data-line1="read threads" data-line2="send emails" aria-label="Gmail — read threads; send emails">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='white'/><text x='50%' y='58%' text-anchor='middle' font-size='24' font-family='Arial' fill='%23EA4335'>M</text></svg>">
-      </button>
-
-      <button class="logo l7" data-title="Shopify" data-line1="sync orders" data-line2="update products" aria-label="Shopify — sync orders; update products">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='%2315A34A'/><text x='50%' y='58%' text-anchor='middle' font-size='22' font-family='Arial' fill='white'>Sh</text></svg>">
-      </button>
-
-      <button class="logo l8" data-title="Slack" data-line1="post alerts" data-line2="read channels" aria-label="Slack — post alerts; read channels">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='%234A154B'/><text x='50%' y='58%' text-anchor='middle' font-size='24' font-family='Arial' fill='white'>S</text></svg>">
-      </button>
-
-      <button class="logo l9" data-title="GitHub" data-line1="trigger builds" data-line2="sync issues" aria-label="GitHub — trigger builds; sync issues">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='black'/><text x='50%' y='58%' text-anchor='middle' font-size='24' font-family='Arial' fill='white'>GH</text></svg>">
-      </button>
-
-      <button class="logo l10" data-title="Google Drive" data-line1="store files" data-line2="fetch docs" aria-label="Google Drive — store files; fetch docs">
-        <img alt="" src="data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' rx='12' fill='%2334A853'/><text x='50%' y='58%' text-anchor='middle' font-size='22' font-family='Arial' fill='white'>Dr</text></svg>">
-      </button>
-    </div>
-
-    <!-- Text stack -->
     <div class="stack">
-      <h1 class="headline">AUTONOMY<br>AS SOVEREIGNTY</h1>
+      <h1 id="h1" class="headline">AUTONOMY<br>AS SOVEREIGNTY</h1>
       <p class="sub">calm control over complex software</p>
-      <button class="btn-ghost" id="seeItWork" aria-haspopup="dialog" aria-controls="demoModal">See it work</button>
+      <button class="btn btn-outline" id="seeItWork" aria-haspopup="dialog">See it work</button>
     </div>
-
-    <!-- Reusable tooltip node -->
-    <div id="tooltip" class="tooltip" role="tooltip" hidden>
-      <div class="tt-title"></div>
-      <ul class="tt-list">
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
+    <div class="scroll-cue" aria-hidden="true">▾</div>
   </section>
 
-  <script src="hero.js"></script>
+  <!-- TRUST STRIP (static logos) -->
+  <section class="trusted" id="integrations" aria-label="Integrations">
+    <p class="trusted-title">Integrates with the tools you already use</p>
+    <ul class="logo-row">
+      <!-- Replace <img> src with your real SVGs. Monochrome by default; color on hover. -->
+      <li><img src="assets/chatgpt.svg" alt="ChatGPT"></li>
+      <li><img src="assets/notion.svg" alt="Notion"></li>
+      <li><img src="assets/stripe.svg" alt="Stripe"></li>
+      <li><img src="assets/powerbi.svg" alt="Power BI"></li>
+      <li><img src="assets/x.svg" alt="X"></li>
+      <li><img src="assets/gmail.svg" alt="Gmail"></li>
+      <li><img src="assets/shopify.svg" alt="Shopify"></li>
+      <li><img src="assets/slack.svg" alt="Slack"></li>
+      <li><img src="assets/github.svg" alt="GitHub"></li>
+      <li><img src="assets/drive.svg" alt="Google Drive"></li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
